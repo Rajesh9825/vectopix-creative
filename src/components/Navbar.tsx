@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoBlack from "@/assets/logo-black.png";
+import logoWhite from "@/assets/logo-white.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -16,15 +16,20 @@ const Navbar = () => {
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
+    // If not on home page, navigate first
+    if (window.location.pathname !== "/") {
+      window.location.href = "/" + href;
+      return;
+    }
     const el = document.querySelector(href);
     el?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-lg border-b border-secondary-foreground/10">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
         <button onClick={() => scrollTo("#home")} className="flex items-center gap-2">
-          <img src={logoBlack} alt="VectoPix" className="h-10 w-auto" />
+          <img src={logoWhite} alt="VectoPix" className="h-10 w-auto" />
         </button>
 
         {/* Desktop */}
@@ -33,7 +38,7 @@ const Navbar = () => {
             <button
               key={link.label}
               onClick={() => scrollTo(link.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-secondary-foreground/70 hover:text-primary transition-colors"
             >
               {link.label}
             </button>
@@ -47,7 +52,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-secondary-foreground" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -59,14 +64,14 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="md:hidden bg-brand-dark border-b border-secondary-foreground/10 overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-3">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
-                  className="text-left py-2 px-3 rounded-md text-foreground hover:bg-muted transition-colors font-medium"
+                  className="text-left py-2 px-3 rounded-md text-secondary-foreground/80 hover:bg-secondary-foreground/10 hover:text-primary transition-colors font-medium"
                 >
                   {link.label}
                 </button>

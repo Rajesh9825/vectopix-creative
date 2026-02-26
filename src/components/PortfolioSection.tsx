@@ -31,6 +31,15 @@ const PortfolioSection = () => {
 
   const filtered = active === "All" ? portfolioItems : portfolioItems.filter((i) => i.category === active);
 
+  const handleCategoryClick = (cat: string) => {
+    if (cat === "All") {
+      setActive(cat);
+    } else {
+      // Navigate to category page
+      navigate(`/portfolio/${encodeURIComponent(cat)}`);
+    }
+  };
+
   return (
     <section id="portfolio" className="py-16 md:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4 md:px-8">
@@ -51,9 +60,9 @@ const PortfolioSection = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActive(cat)}
+              onClick={() => handleCategoryClick(cat)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                active === cat
+                active === cat && cat === "All"
                   ? "bg-primary text-primary-foreground shadow-card"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
@@ -74,6 +83,7 @@ const PortfolioSection = () => {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className="group cursor-pointer"
+              onClick={() => navigate(`/portfolio/${encodeURIComponent(item.category)}`)}
             >
               <div className="rounded-2xl aspect-[4/3] relative overflow-hidden">
                 <img
