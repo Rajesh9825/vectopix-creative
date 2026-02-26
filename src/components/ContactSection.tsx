@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
+import { PenToolElement, PlayButtonElement, BrushElement, FilmCutElement } from "./DesignToolElements";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -15,9 +16,11 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-16 md:py-20 bg-gradient-blue relative overflow-hidden" ref={ref}>
-      {/* Decorative */}
-      <div className="absolute top-10 left-10 w-24 h-24 rounded-full border-2 border-secondary-foreground/10" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full border-2 border-secondary-foreground/10" />
+      {/* Design tool decorative elements */}
+      <PenToolElement className="absolute top-10 left-8 text-secondary-foreground/10 hidden md:block" />
+      <PlayButtonElement className="absolute bottom-16 right-12 text-secondary-foreground/10 hidden md:block" />
+      <BrushElement className="absolute top-20 right-8 text-secondary-foreground/8 hidden lg:block" />
+      <FilmCutElement className="absolute bottom-10 left-12 text-secondary-foreground/10 hidden lg:block" />
 
       <div className="container mx-auto px-4 md:px-8 relative">
         <motion.div
@@ -35,7 +38,7 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        {/* Form - centered, more visible */}
+        {/* Form */}
         <motion.form
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
