@@ -1,27 +1,38 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+import brandIdentity from "@/assets/portfolio/brand-identity.jpg";
+import logoAnimation from "@/assets/portfolio/logo-animation.jpg";
+import corporateVideo from "@/assets/portfolio/corporate-video.jpg";
+import packagingDesign from "@/assets/portfolio/packaging-design.jpg";
+import explainerVideo from "@/assets/portfolio/explainer-video.jpg";
+import socialCampaign from "@/assets/portfolio/social-campaign.jpg";
 
 const categories = ["All", "Graphic Design", "Motion Graphics", "Video Editing"];
 
 const portfolioItems = [
-  { title: "Brand Identity — Luxe Print Co.", category: "Graphic Design", color: "bg-gradient-blue" },
-  { title: "Logo Animation — TechVista", category: "Motion Graphics", color: "bg-gradient-hero" },
-  { title: "Corporate Video — Summit 2024", category: "Video Editing", color: "bg-brand-dark" },
-  { title: "Packaging Design — FreshRoots", category: "Graphic Design", color: "bg-gradient-hero" },
-  { title: "Explainer Video — FinFlow App", category: "Motion Graphics", color: "bg-gradient-blue" },
-  { title: "Social Media Campaign — StyleHub", category: "Graphic Design", color: "bg-brand-dark" },
+  { title: "Brand Identity — Luxe Print Co.", category: "Graphic Design", image: brandIdentity },
+  { title: "Logo Animation — TechVista", category: "Motion Graphics", image: logoAnimation },
+  { title: "Corporate Video — Summit 2024", category: "Video Editing", image: corporateVideo },
+  { title: "Packaging Design — FreshRoots", category: "Graphic Design", image: packagingDesign },
+  { title: "Explainer Video — FinFlow App", category: "Motion Graphics", image: explainerVideo },
+  { title: "Social Media Campaign — StyleHub", category: "Graphic Design", image: socialCampaign },
 ];
+
+export { portfolioItems, categories };
 
 const PortfolioSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [active, setActive] = useState("All");
+  const navigate = useNavigate();
 
   const filtered = active === "All" ? portfolioItems : portfolioItems.filter((i) => i.category === active);
 
   return (
-    <section id="portfolio" className="py-24 md:py-32 bg-background" ref={ref}>
+    <section id="portfolio" className="py-16 md:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,32 +75,27 @@ const PortfolioSection = () => {
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className="group cursor-pointer"
             >
-              <div className={`${item.color} rounded-2xl aspect-[4/3] p-8 flex flex-col justify-end relative overflow-hidden`}>
-                {/* Decorative dot grid */}
-                <div className="absolute top-4 right-4 grid grid-cols-3 gap-1 opacity-30">
-                  {Array.from({ length: 9 }).map((_, j) => (
-                    <div key={j} className="w-1.5 h-1.5 rounded-full bg-current" style={{ color: item.color.includes("hero") ? "hsl(var(--brand-dark))" : "white" }} />
-                  ))}
-                </div>
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: item.color.includes("hero") ? "hsl(var(--brand-dark), 0.6)" : "rgba(255,255,255,0.6)" }}>
+              <div className="rounded-2xl aspect-[4/3] relative overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary/80">
                     {item.category}
                   </span>
-                  <h3 className="text-xl font-bold mt-1" style={{ color: item.color.includes("hero") ? "hsl(var(--brand-dark))" : "white" }}>
+                  <h3 className="text-lg font-bold mt-1 text-white">
                     {item.title}
                   </h3>
                 </div>
-                <motion.div
-                  className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/20 transition-colors duration-300 rounded-2xl flex items-center justify-center"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileHover={{ opacity: 1, scale: 1 }}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity"
-                  >
-                    <ArrowRight className="w-8 h-8" style={{ color: "white" }} />
-                  </motion.div>
-                </motion.div>
+                <div className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/30 transition-colors duration-300 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowRight className="w-8 h-8 text-white" />
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -101,7 +107,10 @@ const PortfolioSection = () => {
           transition={{ delay: 0.5 }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-4 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition-opacity shadow-card">
+          <button
+            onClick={() => navigate("/portfolio")}
+            className="px-8 py-4 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition-opacity shadow-card"
+          >
             Explore More Work
           </button>
         </motion.div>
