@@ -14,7 +14,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-background" ref={ref}>
+    <section id="about" className="py-16 md:py-20 bg-background" ref={ref}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
