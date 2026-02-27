@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
-import { PenToolElement, BrushElement, PencilElement, TypeToolElement } from "./DesignToolElements";
+import { PenToolElement, BrushElement, KeyframeElement, PlayButtonElement, FilmCutElement, LayersElement } from "./DesignToolElements";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -17,10 +17,12 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-16 md:py-20 bg-gradient-blue relative overflow-hidden" ref={ref}>
       {/* Design tool decorative elements */}
-      <PencilElement className="absolute top-10 left-8 text-secondary-foreground/10 hidden md:block" />
-      <TypeToolElement className="absolute bottom-16 right-12 text-secondary-foreground/10 hidden md:block" />
+      <PlayButtonElement className="absolute top-10 left-8 text-secondary-foreground/10 hidden md:block" />
+      <KeyframeElement className="absolute bottom-16 right-12 text-secondary-foreground/10 hidden md:block" />
       <BrushElement className="absolute top-20 right-8 text-secondary-foreground/8 hidden lg:block" />
-      <PenToolElement className="absolute bottom-10 left-12 text-secondary-foreground/10 hidden lg:block" />
+      <FilmCutElement className="absolute bottom-10 left-12 text-secondary-foreground/10 hidden lg:block" />
+      <LayersElement className="absolute top-1/2 right-4 text-secondary-foreground/8 hidden xl:block" />
+      <PenToolElement className="absolute bottom-20 right-[30%] text-secondary-foreground/6 hidden xl:block" />
 
       <div className="container mx-auto px-4 md:px-8 relative">
         <motion.div
@@ -38,7 +40,6 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        {/* Form */}
         <motion.form
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -47,45 +48,22 @@ const ContactSection = () => {
           className="max-w-2xl mx-auto bg-background rounded-2xl p-8 md:p-10 shadow-elevated"
         >
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              required
-              value={formData.name}
+            <input type="text" placeholder="Your Name" required value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              required
-              value={formData.email}
+              className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
+            <input type="email" placeholder="Your Email" required value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-            />
+              className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
           </div>
-          <input
-            type="text"
-            placeholder="Subject"
-            required
-            value={formData.subject}
+          <input type="text" placeholder="Subject" required value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-            className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all mb-4"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows={5}
-            required
-            value={formData.message}
+            className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all mb-4" />
+          <textarea placeholder="Your Message" rows={5} required value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all mb-6 resize-none"
-          />
-          <button
-            type="submit"
-            className="w-full px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-card text-base"
-          >
-            Send Message
-            <Send className="w-4 h-4" />
+            className="w-full px-4 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all mb-6 resize-none" />
+          <button type="submit"
+            className="w-full px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-card text-base">
+            Send Message <Send className="w-4 h-4" />
           </button>
         </motion.form>
       </div>

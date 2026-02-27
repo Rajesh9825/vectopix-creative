@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { portfolioItems, categories } from "@/components/PortfolioSection";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const PortfolioPage = () => {
   const [active, setActive] = useState("All");
@@ -12,6 +14,7 @@ const PortfolioPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navbar />
       {/* Header */}
       <div className="bg-gradient-hero py-20 pt-28">
         <div className="container mx-auto px-4 md:px-8">
@@ -53,27 +56,20 @@ const PortfolioPage = () => {
         <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((item, i) => (
             <motion.div
-              key={item.title}
+              key={item.id}
               layout
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className="group cursor-pointer"
+              onClick={() => navigate(`/portfolio/work/${item.id}`)}
             >
               <div className="rounded-2xl aspect-[4/3] relative overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary/80">
-                    {item.category}
-                  </span>
-                  <h3 className="text-lg font-bold mt-1 text-white">
-                    {item.title}
-                  </h3>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary/80">{item.category}</span>
+                  <h3 className="text-lg font-bold mt-1 text-white">{item.title}</h3>
                 </div>
                 <div className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/30 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity">
@@ -85,6 +81,7 @@ const PortfolioPage = () => {
           ))}
         </motion.div>
       </div>
+      <Footer />
     </div>
   );
 };
