@@ -13,12 +13,12 @@ import socialCampaign from "@/assets/portfolio/social-campaign.jpg";
 const categories = ["All", "Graphic Design", "Motion Graphics", "Video Editing"];
 
 const portfolioItems = [
-  { id: "luxe-print-co", title: "Brand Identity — Luxe Print Co.", category: "Graphic Design", image: brandIdentity },
-  { id: "techvista-logo", title: "Logo Animation — TechVista", category: "Motion Graphics", image: logoAnimation },
-  { id: "summit-2024", title: "Corporate Video — Summit 2024", category: "Video Editing", image: corporateVideo },
-  { id: "freshroots-packaging", title: "Packaging Design — FreshRoots", category: "Graphic Design", image: packagingDesign },
-  { id: "finflow-explainer", title: "Explainer Video — FinFlow App", category: "Motion Graphics", image: explainerVideo },
-  { id: "stylehub-campaign", title: "Social Media Campaign — StyleHub", category: "Graphic Design", image: socialCampaign },
+  { title: "Brand Identity — Luxe Print Co.", category: "Graphic Design", image: brandIdentity },
+  { title: "Logo Animation — TechVista", category: "Motion Graphics", image: logoAnimation },
+  { title: "Corporate Video — Summit 2024", category: "Video Editing", image: corporateVideo },
+  { title: "Packaging Design — FreshRoots", category: "Graphic Design", image: packagingDesign },
+  { title: "Explainer Video — FinFlow App", category: "Motion Graphics", image: explainerVideo },
+  { title: "Social Media Campaign — StyleHub", category: "Graphic Design", image: socialCampaign },
 ];
 
 export { portfolioItems, categories };
@@ -30,6 +30,15 @@ const PortfolioSection = () => {
   const navigate = useNavigate();
 
   const filtered = active === "All" ? portfolioItems : portfolioItems.filter((i) => i.category === active);
+
+  const handleCategoryClick = (cat: string) => {
+    if (cat === "All") {
+      setActive(cat);
+    } else {
+      // Navigate to category page
+      navigate(`/portfolio/${encodeURIComponent(cat)}`);
+    }
+  };
 
   return (
     <section id="portfolio" className="py-16 md:py-20 bg-background" ref={ref}>
@@ -46,14 +55,14 @@ const PortfolioSection = () => {
           </h2>
         </motion.div>
 
-        {/* Filter tabs — filter in-place */}
+        {/* Filter tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActive(cat)}
+              onClick={() => handleCategoryClick(cat)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                active === cat
+                active === cat && cat === "All"
                   ? "bg-primary text-primary-foreground shadow-card"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
@@ -67,14 +76,14 @@ const PortfolioSection = () => {
         <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {filtered.map((item, i) => (
             <motion.div
-              key={item.id}
+              key={item.title}
               layout
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className="group cursor-pointer"
-              onClick={() => navigate(`/portfolio/work/${item.id}`)}
+              onClick={() => navigate(`/portfolio/${encodeURIComponent(item.category)}`)}
             >
               <div className="rounded-2xl aspect-[4/3] relative overflow-hidden">
                 <img
@@ -82,6 +91,7 @@ const PortfolioSection = () => {
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary/80">

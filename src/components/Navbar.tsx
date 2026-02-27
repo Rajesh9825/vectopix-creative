@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
 import logoWhite from "@/assets/logo-white.png";
 
 const navLinks = [
@@ -14,20 +13,16 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/" + href);
+    // If not on home page, navigate first
+    if (window.location.pathname !== "/") {
+      window.location.href = "/" + href;
       return;
     }
-    // Small delay to let menu close on mobile
-    setTimeout(() => {
-      const el = document.querySelector(href);
-      el?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    const el = document.querySelector(href);
+    el?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
