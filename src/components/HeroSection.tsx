@@ -4,8 +4,12 @@ import {
   PenToolElement,
   BrushElement,
   PencilElement,
-  SelectionToolElement,
-  TypeToolElement,
+  EyedropperElement,
+  KeyframeElement,
+  GradientToolElement,
+  LayersElement,
+  PlayButtonElement,
+  FilmCutElement,
 } from "./DesignToolElements";
 
 const HeroSection = () => {
@@ -18,21 +22,16 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center bg-background overflow-hidden"
     >
-      {/* ── Right-side decorative zone (positioned in the right 40%) ── */}
-      {/* Pen Tool — upper right, main element */}
+      {/* ── Decorative design tool elements ── */}
       <PenToolElement className="absolute top-28 right-[4%] text-brand-dark/20 hidden lg:block" />
-
-      {/* Brush — lower right */}
       <BrushElement className="absolute bottom-36 right-[6%] text-brand-dark/15 hidden lg:block" />
-
-      {/* Pencil — mid-right edge */}
       <PencilElement className="absolute top-[55%] right-[2%] text-brand-dark/15 hidden xl:block" />
-
-      {/* Selection tool — far right corner */}
-      <SelectionToolElement className="absolute bottom-[18%] right-[22%] text-brand-dark/12 hidden lg:block" />
-
-      {/* Type tool — top-right corner */}
-      <TypeToolElement className="absolute top-24 right-[32%] text-brand-dark/15 hidden xl:block" />
+      <EyedropperElement className="absolute top-20 right-[30%] text-brand-dark/12 hidden xl:block" />
+      <KeyframeElement className="absolute bottom-[22%] right-[18%] text-brand-dark/15 hidden lg:block" />
+      <GradientToolElement className="absolute top-[40%] right-[8%] text-brand-dark/10 hidden xl:block" />
+      <LayersElement className="absolute bottom-28 right-[35%] text-brand-dark/12 hidden xl:block" />
+      <PlayButtonElement className="absolute top-[30%] right-[25%] text-brand-dark/15 hidden lg:block" />
+      <FilmCutElement className="absolute bottom-[40%] right-[12%] text-brand-dark/10 hidden xl:block" />
 
       {/* ── Content ── */}
       <div className="container mx-auto px-4 md:px-8 pt-20">
@@ -88,7 +87,6 @@ const HeroSection = () => {
                   className="w-56 h-auto"
                 />
               </div>
-              {/* Floating badges */}
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ repeat: Infinity, duration: 3 }}
