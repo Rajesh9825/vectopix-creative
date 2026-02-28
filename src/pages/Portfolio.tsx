@@ -59,6 +59,7 @@ const PortfolioPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className="group cursor-pointer"
+              onClick={() => navigate(`/portfolio/work/${item.id}`)}
             >
               <div className="rounded-2xl aspect-[4/3] relative overflow-hidden">
                 <img
