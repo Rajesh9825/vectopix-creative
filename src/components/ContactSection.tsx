@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
-import { PenToolElement, PlayButtonElement, BrushElement, FilmCutElement } from "./DesignToolElements";
+import { PenToolElement, PlayButtonElement, BrushElement, SelectionToolElement, TypeToolElement } from "./DesignToolElements";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -16,11 +16,12 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-16 md:py-20 bg-gradient-blue relative overflow-hidden" ref={ref}>
-      {/* Design tool decorative elements */}
-      <PenToolElement className="absolute top-10 left-8 text-secondary-foreground/10 hidden md:block" />
-      <PlayButtonElement className="absolute bottom-16 right-12 text-secondary-foreground/10 hidden md:block" />
-      <BrushElement className="absolute top-20 right-8 text-secondary-foreground/8 hidden lg:block" />
-      <FilmCutElement className="absolute bottom-10 left-12 text-secondary-foreground/10 hidden lg:block" />
+      {/* Design tool decorative elements — outline style */}
+      <PenToolElement className="absolute top-12 right-10 text-secondary-foreground/15 hidden md:block" />
+      <BrushElement className="absolute bottom-16 left-10 text-secondary-foreground/12 hidden md:block" />
+      <PlayButtonElement className="absolute bottom-20 right-16 text-secondary-foreground/15 hidden lg:block" />
+      <SelectionToolElement className="absolute top-16 left-8 text-secondary-foreground/10 hidden lg:block" />
+      <TypeToolElement className="absolute top-1/2 right-6 text-secondary-foreground/10 hidden xl:block" />
 
       <div className="container mx-auto px-4 md:px-8 relative">
         <motion.div

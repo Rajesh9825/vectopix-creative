@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import logoBlack from "@/assets/logo-black.png";
-import { PenToolElement, PencilElement, PlayButtonElement, BrushElement, FilmCutElement, ColorPaletteElement } from "./DesignToolElements";
+import { PenToolElement, BrushElement, PencilElement, SelectionToolElement, TypeToolElement } from "./DesignToolElements";
 
 const HeroSection = () => {
   const scrollTo = (href: string) => {
@@ -9,17 +9,12 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden">
-      {/* Design tool elements instead of geometric shapes */}
-      <PenToolElement className="absolute top-24 left-8 text-brand-dark/15 hidden md:block" />
-      <PencilElement className="absolute top-20 right-16 text-brand-dark/12 hidden md:block" />
-      <PlayButtonElement className="absolute bottom-32 right-24 text-brand-dark/15 hidden md:block" />
-      <BrushElement className="absolute bottom-24 left-16 text-brand-dark/12 hidden md:block" />
-      <FilmCutElement className="absolute top-1/3 right-8 text-brand-dark/10 hidden lg:block" />
-      <ColorPaletteElement className="absolute bottom-1/3 left-1/3 text-brand-dark/10 hidden lg:block" />
-
-      {/* Small accent dots */}
-      <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-brand-dark/20" />
-      <div className="absolute bottom-1/4 right-1/3 w-2 h-2 rounded-full bg-brand-dark/15" />
+      {/* Design tool elements — outline style, low opacity */}
+      <PenToolElement className="absolute top-28 right-16 text-brand-dark/20 hidden md:block" />
+      <BrushElement className="absolute bottom-28 right-20 text-brand-dark/15 hidden md:block" />
+      <PencilElement className="absolute top-1/3 left-8 text-brand-dark/15 hidden lg:block" />
+      <SelectionToolElement className="absolute bottom-1/4 left-1/4 text-brand-dark/12 hidden lg:block" />
+      <TypeToolElement className="absolute top-24 left-1/3 text-brand-dark/15 hidden xl:block" />
 
       <div className="container mx-auto px-4 md:px-8 pt-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
