@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { portfolioItems } from "@/components/PortfolioSection";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const CategoryPortfolio = () => {
   const { category } = useParams<{ category: string }>();
@@ -13,6 +14,7 @@ const CategoryPortfolio = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navbar />
       {/* Header */}
       <div className="bg-gradient-hero py-20 pt-28">
         <div className="container mx-auto px-4 md:px-8">
@@ -42,12 +44,13 @@ const CategoryPortfolio = () => {
           <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((item, i) => (
               <motion.div
-                key={item.title}
+                key={item.id}
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="group cursor-pointer"
+                onClick={() => navigate(`/portfolio/work/${item.id}`)}
               >
                 <div className="rounded-2xl aspect-[4/3] relative overflow-hidden">
                   <img
@@ -75,6 +78,8 @@ const CategoryPortfolio = () => {
           </motion.div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 };
