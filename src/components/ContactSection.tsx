@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
+import penToolGif from "@/assets/pen-tool-animation.gif";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -15,7 +16,13 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-16 md:py-20 bg-gradient-blue relative overflow-hidden" ref={ref}>
-
+      {/* Pen tool animation */}
+      <img
+        src={penToolGif}
+        alt=""
+        aria-hidden="true"
+        className="absolute top-6 left-8 w-28 md:w-36 opacity-20 pointer-events-none mix-blend-luminosity hidden md:block"
+      />
       <div className="container mx-auto px-4 md:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
