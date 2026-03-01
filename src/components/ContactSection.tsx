@@ -21,7 +21,8 @@ const ContactSection = () => {
         src={penToolGif}
         alt=""
         aria-hidden="true"
-        className="absolute top-6 left-8 w-28 md:w-36 opacity-20 pointer-events-none mix-blend-luminosity hidden md:block"
+        className="absolute top-6 left-8 w-28 md:w-36 opacity-20 pointer-events-none hidden md:block"
+        style={{ filter: "hue-rotate(100deg) saturate(1.2)" }}
       />
       <div className="container mx-auto px-4 md:px-8 relative">
         <motion.div
