@@ -20,13 +20,15 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-brand-dark leading-tight mb-6">
               Design.
               <br />
-              <span className="text-secondary">Motion.</span>
-              <img
-                src={penToolGif2}
-                alt=""
-                aria-hidden="true"
-                className="inline-block h-[1em] w-auto ml-4 align-middle opacity-40 mix-blend-multiply lg:hidden"
-              />
+              <div className="flex items-center justify-between">
+                <span className="text-secondary">Motion.</span>
+                <img
+                  src={penToolGif2}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-12 md:h-16 w-auto opacity-40 mix-blend-multiply lg:hidden"
+                />
+              </div>
               <br />
               Impact.
             </h1>
