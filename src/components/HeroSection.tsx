@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import logoBlack from "@/assets/logo-black.png";
+import penToolGif2 from "@/assets/pen-tool-animation2.gif";
 
 const HeroSection = () => {
   const scrollTo = (href: string) => {
@@ -20,6 +21,12 @@ const HeroSection = () => {
               Design.
               <br />
               <span className="text-secondary">Motion.</span>
+              <img
+                src={penToolGif2}
+                alt=""
+                aria-hidden="true"
+                className="inline-block w-16 h-auto ml-3 -mt-1 opacity-40 mix-blend-multiply lg:hidden"
+              />
               <br />
               Impact.
             </h1>
