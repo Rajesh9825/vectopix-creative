@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
 import penToolGif from "@/assets/pen-tool-animation.gif";
+import penToolGif2 from "@/assets/pen-tool-animation2.gif";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -22,6 +23,13 @@ const ContactSection = () => {
         alt=""
         aria-hidden="true"
         className="absolute top-6 left-8 w-28 md:w-36 opacity-30 pointer-events-none hidden md:block mix-blend-multiply"
+      />
+      {/* Right top pen tool animation */}
+      <img
+        src={penToolGif2}
+        alt=""
+        aria-hidden="true"
+        className="absolute top-6 right-8 w-28 md:w-36 opacity-30 pointer-events-none hidden md:block mix-blend-multiply"
       />
       <div className="container mx-auto px-4 md:px-8 relative">
         <motion.div
