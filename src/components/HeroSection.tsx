@@ -25,7 +25,7 @@ const HeroSection = () => {
                 src={penToolGif2}
                 alt=""
                 aria-hidden="true"
-                className="inline-block h-14 md:h-16 w-auto ml-4 align-middle opacity-40 mix-blend-multiply lg:hidden"
+                className="inline-block h-20 md:h-24 w-auto ml-4 align-middle opacity-40 mix-blend-multiply lg:hidden"
               />
               <br />
               Impact.
