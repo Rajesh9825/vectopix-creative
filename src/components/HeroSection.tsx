@@ -17,7 +17,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-brand-dark leading-tight mb-6">
+            <h1 className="relative text-5xl md:text-7xl font-bold text-brand-dark leading-tight mb-6">
               Design.
               <br />
               <span className="text-secondary">Motion.</span>
@@ -25,7 +25,7 @@ const HeroSection = () => {
                 src={penToolGif2}
                 alt=""
                 aria-hidden="true"
-                className="inline-block h-20 md:h-24 w-auto ml-4 align-middle opacity-40 mix-blend-multiply lg:hidden"
+                className="absolute right-0 top-1/2 -translate-y-1/2 h-28 md:h-32 w-auto opacity-40 mix-blend-multiply lg:hidden"
               />
               <br />
               Impact.
