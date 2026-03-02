@@ -22,14 +22,13 @@ const ContactSection = () => {
         src={penToolGif}
         alt=""
         aria-hidden="true"
-        className="absolute top-6 left-8 w-28 md:w-36 opacity-30 pointer-events-none hidden md:block mix-blend-multiply"
+        className="absolute top-4 left-4 md:top-6 md:left-8 w-16 md:w-36 opacity-20 md:opacity-30 pointer-events-none mix-blend-multiply"
       />
-      {/* Right top pen tool animation */}
       <img
         src={penToolGif2}
         alt=""
         aria-hidden="true"
-        className="absolute top-6 right-8 w-28 md:w-36 opacity-30 pointer-events-none hidden md:block mix-blend-multiply"
+        className="absolute top-4 right-4 md:top-6 md:right-8 w-16 md:w-36 opacity-20 md:opacity-30 pointer-events-none mix-blend-multiply"
       />
       <div className="container mx-auto px-4 md:px-8 relative">
         <motion.div
