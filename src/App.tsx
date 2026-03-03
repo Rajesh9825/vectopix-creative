@@ -8,17 +8,17 @@ import Portfolio from "./pages/Portfolio";
 import CategoryPortfolio from "./pages/CategoryPortfolio";
 import WorkDetail from "./pages/WorkDetail";
 import NotFound from "./pages/NotFound";
-
+import CustomCursor from "./components/CustomCursor";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      
+      <CustomCursor />
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/vectopix-creative/">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/portfolio" element={<Portfolio />} />
