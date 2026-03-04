@@ -58,16 +58,16 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left p-6 md:p-8 rounded-2xl bg-card border border-border shadow-card hover:shadow-elevated transition-all duration-300 hover:border-primary/30"
+        className="w-full text-left p-4 sm:p-6 md:p-8 rounded-2xl bg-card border border-border shadow-card hover:shadow-elevated transition-all duration-300 hover:border-primary/30"
       >
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex gap-4 items-start flex-1">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center">
-              <Icon className="w-6 h-6 text-brand-dark" />
+        <div className="flex items-start justify-between gap-3 sm:gap-4">
+          <div className="flex gap-3 sm:gap-4 items-start flex-1 min-w-0">
+            <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-hero flex items-center justify-center">
+              <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-brand-dark" />
             </div>
-            <div className="flex-1">
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">{service.title}</h3>
-              <p className="text-muted-foreground text-sm">{service.desc}</p>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1 break-words">{service.title}</h3>
+              <p className="text-muted-foreground text-xs sm:text-sm">{service.desc}</p>
             </div>
           </div>
           <motion.div
@@ -75,7 +75,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
             transition={{ duration: 0.3 }}
             className="flex-shrink-0 mt-1"
           >
-            <ChevronDown className="w-5 h-5 text-muted-foreground" />
+            <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
           </motion.div>
         </div>
 
@@ -88,11 +88,11 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <div className="mt-5 ml-16 flex flex-wrap gap-2">
+              <div className="mt-4 sm:mt-5 ml-0 sm:ml-16 flex flex-wrap gap-2">
                 {service.subs.map((sub) => (
                   <span
                     key={sub}
-                    className="px-3 py-1.5 rounded-lg bg-muted text-muted-foreground text-sm font-medium"
+                    className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-muted text-muted-foreground text-xs sm:text-sm font-medium"
                   >
                     {sub}
                   </span>
@@ -111,24 +111,24 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-16 md:py-20 bg-muted/50" ref={ref}>
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="services" className="py-12 sm:py-16 md:py-20 bg-muted/50" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest">What We Do</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 text-foreground">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 text-foreground">
             Our <span className="text-gradient-yellow">Services</span>
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-muted-foreground max-w-xl mx-auto text-sm sm:text-base">
             Comprehensive creative solutions tailored to elevate your brand across every touchpoint.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 max-w-5xl mx-auto">
           {services.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} />
           ))}
