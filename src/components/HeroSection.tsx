@@ -8,8 +8,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 pt-24 pb-12 md:pt-20 md:pb-0 w-full">
+    <section
+      id="home"
+      className="relative overflow-hidden bg-gradient-hero lg:min-h-[calc(100svh-4rem)] lg:flex lg:items-center"
+    >
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 pt-[clamp(5.5rem,14vw,7rem)] pb-[clamp(3rem,10vw,5rem)] w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -17,7 +20,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-dark leading-tight mb-4 sm:mb-6">
+            <h1 className="relative fluid-display font-bold text-brand-dark mb-4 sm:mb-6">
               Design.
               <br />
               <span className="text-secondary">Motion.</span>
@@ -25,17 +28,17 @@ const HeroSection = () => {
                 src={penToolGif2}
                 alt=""
                 aria-hidden="true"
-                className="absolute right-0 top-1/2 -translate-y-1/2 h-20 sm:h-24 md:h-32 w-auto opacity-40 mix-blend-multiply lg:hidden"
+                className="absolute right-0 top-1/2 -translate-y-1/2 h-16 sm:h-20 md:h-24 w-auto opacity-35 mix-blend-multiply lg:hidden"
               />
               <br />
               Impact.
             </h1>
 
-            <p className="text-base sm:text-lg text-brand-dark/70 max-w-md mx-auto lg:mx-0 mb-8 sm:mb-10 leading-relaxed">
+            <p className="text-[clamp(1rem,3.6vw,1.35rem)] text-brand-dark/75 max-w-md mx-auto lg:mx-0 mb-8 sm:mb-10 leading-relaxed">
               Professional graphic design, motion graphics & video editing solutions crafted for brands that demand excellence.
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-2 sm:mb-4 justify-center lg:justify-start">
               <a
                 href="/portfolio"
                 className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-brand-dark text-primary font-semibold text-sm sm:text-base hover:bg-brand-dark/90 transition-colors shadow-elevated inline-block text-center"

@@ -14,7 +14,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-20 bg-background" ref={ref}>
+    <section id="about" className="section-padding bg-background" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
@@ -24,17 +24,17 @@ const AboutSection = () => {
             className="text-center lg:text-left"
           >
             <span className="text-sm font-semibold text-secondary uppercase tracking-widest">About Us</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-4 sm:mb-6 text-foreground">
+            <h2 className="fluid-heading font-bold mt-3 mb-4 sm:mb-6 text-foreground">
               We Create What
               <br />
               <span className="text-gradient-yellow">Brands Need</span>
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+            <p className="text-muted-foreground text-[clamp(1rem,2.9vw,1.125rem)] leading-relaxed mb-4 sm:mb-6">
               VectoPix Creative Works is a professional graphic design and creative studio based in Pune, India.
               We specialize in building powerful brand identities, creating stunning visual content, and producing
               dynamic motion graphics that elevate your brand communication.
             </p>
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+            <p className="text-muted-foreground text-[clamp(0.95rem,2.6vw,1.05rem)] leading-relaxed">
               From startups to corporates, we deliver design solutions that are strategically crafted to engage
               your audience and drive business growth — both locally and internationally.
             </p>
@@ -55,7 +55,7 @@ const AboutSection = () => {
                 className="flex gap-4 sm:gap-5 p-4 sm:p-6 rounded-2xl bg-card border border-border shadow-card hover:shadow-elevated transition-shadow"
               >
                 <div className="flex-shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-primary/20 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 sm:w-7 sm:h-7 text-primary-foreground" style={{ color: "hsl(var(--brand-dark))" }} />
+                  <item.icon className="w-5 h-5 sm:w-7 sm:h-7 text-brand-dark" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1">{item.title}</h3>
