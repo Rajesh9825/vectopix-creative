@@ -18,7 +18,7 @@ const App = () => (
       
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/vectopix-creative/">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/portfolio" element={<Portfolio />} />

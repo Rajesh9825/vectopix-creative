@@ -32,27 +32,27 @@ const PortfolioSection = () => {
   const filtered = active === "All" ? portfolioItems : portfolioItems.filter((i) => i.category === active);
 
   return (
-    <section id="portfolio" className="py-14 md:py-20 2xl:py-28 bg-background" ref={ref}>
-      <div className="container mx-auto">
+    <section id="portfolio" className="py-16 md:py-20 bg-background" ref={ref}>
+      <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8 md:mb-12"
+          className="text-center mb-12"
         >
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest">Our Work</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl font-bold mt-3 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mt-3 text-foreground">
             Featured <span className="text-gradient-yellow">Portfolio</span>
           </h2>
         </motion.div>
 
-        {/* Filter tabs */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-12">
+        {/* Filter tabs — filter in-section */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                 active === cat
                   ? "bg-primary text-primary-foreground shadow-card"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
@@ -64,7 +64,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Grid */}
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl 2xl:max-w-7xl mx-auto">
+        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <AnimatePresence mode="popLayout">
             {filtered.map((item, i) => (
               <motion.div
@@ -84,11 +84,11 @@ const PortfolioSection = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="text-xs font-semibold uppercase tracking-wider text-primary/80">
                       {item.category}
                     </span>
-                    <h3 className="text-sm sm:text-base md:text-lg font-bold mt-1 text-white">
+                    <h3 className="text-lg font-bold mt-1 text-white">
                       {item.title}
                     </h3>
                   </div>
@@ -104,18 +104,18 @@ const PortfolioSection = () => {
         </motion.div>
 
         {/* View category page + Explore all */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 md:mt-12">
+        <div className="flex flex-wrap justify-center gap-4 mt-12">
           {active !== "All" && (
             <button
               onClick={() => navigate(`/portfolio/${encodeURIComponent(active)}`)}
-              className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-brand-dark/20 text-foreground font-semibold text-sm sm:text-base hover:bg-muted transition-colors"
+              className="px-8 py-4 rounded-xl border-2 border-brand-dark/20 text-foreground font-semibold hover:bg-muted transition-colors"
             >
               View All {active} →
             </button>
           )}
           <button
             onClick={() => navigate("/portfolio")}
-            className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-secondary text-secondary-foreground font-semibold text-sm sm:text-base hover:opacity-90 transition-opacity shadow-card"
+            className="px-8 py-4 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition-opacity shadow-card"
           >
             Explore More Work
           </button>
