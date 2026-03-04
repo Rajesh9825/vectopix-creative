@@ -66,7 +66,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
               <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-brand-dark" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1 break-words">{service.title}</h3>
+              <h3 className="text-[clamp(1rem,2.8vw,1.3rem)] font-bold text-foreground mb-1 break-words">{service.title}</h3>
               <p className="text-muted-foreground text-xs sm:text-sm">{service.desc}</p>
             </div>
           </div>
@@ -111,19 +111,19 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-20 bg-muted/50" ref={ref}>
+    <section id="services" className="section-padding bg-muted/50" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-10 sm:mb-14"
         >
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest">What We Do</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 text-foreground">
+          <h2 className="fluid-heading font-bold mt-3 text-foreground">
             Our <span className="text-gradient-yellow">Services</span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-muted-foreground max-w-xl mx-auto text-sm sm:text-base">
+          <p className="mt-3 sm:mt-4 text-muted-foreground max-w-xl mx-auto text-[clamp(0.95rem,2.5vw,1.05rem)]">
             Comprehensive creative solutions tailored to elevate your brand across every touchpoint.
           </p>
         </motion.div>

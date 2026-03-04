@@ -32,7 +32,7 @@ const PortfolioSection = () => {
   const filtered = active === "All" ? portfolioItems : portfolioItems.filter((i) => i.category === active);
 
   return (
-    <section id="portfolio" className="py-12 sm:py-16 md:py-20 bg-background" ref={ref}>
+    <section id="portfolio" className="section-padding bg-background" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,12 +41,11 @@ const PortfolioSection = () => {
           className="text-center mb-8 sm:mb-12"
         >
           <span className="text-sm font-semibold text-secondary uppercase tracking-widest">Our Work</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 text-foreground">
+          <h2 className="fluid-heading font-bold mt-3 text-foreground">
             Featured <span className="text-gradient-yellow">Portfolio</span>
           </h2>
         </motion.div>
 
-        {/* Filter tabs */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
           {categories.map((cat) => (
             <button
@@ -63,8 +62,7 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* Grid */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-6xl mx-auto">
           <AnimatePresence mode="popLayout">
             {filtered.map((item, i) => (
               <motion.div
@@ -103,8 +101,7 @@ const PortfolioSection = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* Actions */}
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8 sm:mt-12">
           {active !== "All" && (
             <button
               onClick={() => navigate(`/portfolio/${encodeURIComponent(active)}`)}

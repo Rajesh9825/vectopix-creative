@@ -16,18 +16,18 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-gradient-blue relative overflow-hidden" ref={ref}>
+    <section id="contact" className="section-padding bg-gradient-blue relative overflow-hidden" ref={ref}>
       <img
         src={penToolGif}
         alt=""
         aria-hidden="true"
-        className="absolute top-4 left-4 md:top-6 md:left-8 w-12 sm:w-16 md:w-36 opacity-20 md:opacity-30 pointer-events-none mix-blend-multiply"
+        className="absolute top-4 left-4 md:top-6 md:left-8 w-12 sm:w-16 md:w-28 opacity-20 md:opacity-30 pointer-events-none mix-blend-multiply"
       />
       <img
         src={penToolGif2}
         alt=""
         aria-hidden="true"
-        className="absolute top-4 right-4 md:top-6 md:right-8 w-12 sm:w-16 md:w-36 opacity-20 md:opacity-30 pointer-events-none mix-blend-multiply"
+        className="absolute top-4 right-4 md:top-6 md:right-8 w-12 sm:w-16 md:w-28 opacity-20 md:opacity-30 pointer-events-none mix-blend-multiply"
       />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative">
         <motion.div
@@ -37,10 +37,10 @@ const ContactSection = () => {
           className="text-center mb-8 sm:mb-12"
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-widest">Get In Touch</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3 text-secondary-foreground">
+          <h2 className="fluid-heading font-bold mt-3 text-secondary-foreground">
             Let's Work Together
           </h2>
-          <p className="mt-3 sm:mt-4 text-secondary-foreground/70 max-w-xl mx-auto text-sm sm:text-base">
+          <p className="mt-3 sm:mt-4 text-secondary-foreground/80 max-w-xl mx-auto text-[clamp(0.95rem,2.6vw,1.05rem)]">
             Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you.
           </p>
         </motion.div>
@@ -50,7 +50,7 @@ const ContactSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.6 }}
           onSubmit={handleSubmit}
-          className="max-w-2xl mx-auto bg-background rounded-2xl p-5 sm:p-8 md:p-10 shadow-elevated"
+          className="max-w-2xl mx-auto bg-background rounded-2xl p-[clamp(1.25rem,4vw,2.5rem)] shadow-elevated"
         >
           <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
             <input

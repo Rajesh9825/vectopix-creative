@@ -91,8 +91,15 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply w-full overflow-x-hidden;
+    -webkit-text-size-adjust: 100%;
+  }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased w-full overflow-x-hidden;
+  }
+  #root {
+    @apply min-h-screen w-full overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
@@ -115,5 +122,16 @@
   }
   .shadow-elevated {
     box-shadow: var(--shadow-elevated);
+  }
+  .section-padding {
+    padding-block: clamp(3rem, 8vw, 5rem);
+  }
+  .fluid-display {
+    font-size: clamp(2.85rem, 12vw, 5.6rem);
+    line-height: 0.95;
+  }
+  .fluid-heading {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    line-height: 1.08;
   }
 }
