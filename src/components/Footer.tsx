@@ -44,7 +44,7 @@ const Footer = () => {
                 <a
                   key={i}
                   href="#"
-                  className="w-9 h-9 rounded-lg flex items-center justify-center transition-colors bg-secondary-foreground/10 text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center transition-all glass text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground hover:border-primary/30"
                 >
                   <Icon className="w-4 h-4" />
                 </a>

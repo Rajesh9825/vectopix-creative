@@ -75,18 +75,18 @@ const PortfolioSection = () => {
                 className="group cursor-pointer"
                 onClick={() => navigate(`/portfolio/work/${item.id}`)}
               >
-                <div className="rounded-2xl aspect-[4/3] relative overflow-hidden">
+                <div className="rounded-2xl aspect-[4/3] relative overflow-hidden glass-shimmer" style={{ boxShadow: '0 8px 32px hsl(0 0% 0% / 0.15), inset 0 1px 0 hsl(0 0% 100% / 0.1)' }}>
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent backdrop-blur-[1px]" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary/80">
+                    <span className="inline-block text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-md text-primary/90" style={{ background: 'hsl(0 0% 100% / 0.1)', backdropFilter: 'blur(8px)' }}>
                       {item.category}
                     </span>
-                    <h3 className="text-sm sm:text-lg font-bold mt-1 text-white">
+                    <h3 className="text-sm sm:text-lg font-bold mt-1.5 text-white drop-shadow-sm">
                       {item.title}
                     </h3>
                   </div>
