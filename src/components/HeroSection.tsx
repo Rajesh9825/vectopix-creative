@@ -61,27 +61,27 @@ const HeroSection = () => {
             className="hidden lg:flex justify-center"
           >
             <div className="relative">
-              <div className="w-64 xl:w-80 h-64 xl:h-80 rounded-3xl bg-brand-dark/5 backdrop-blur flex items-center justify-center">
+              <div className="w-64 xl:w-80 h-64 xl:h-80 rounded-3xl glass-card-light flex items-center justify-center">
                 <img src={logoBlack} alt="VectoPix Creative Works" className="w-44 xl:w-56 h-auto" />
               </div>
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ repeat: Infinity, duration: 3 }}
-                className="absolute -top-4 -right-4 px-3 xl:px-4 py-1.5 xl:py-2 rounded-xl bg-secondary text-secondary-foreground font-semibold text-xs xl:text-sm shadow-card"
+                className="absolute -top-4 -right-4 px-3 xl:px-4 py-1.5 xl:py-2 rounded-xl glass-strong text-secondary-foreground font-semibold text-xs xl:text-sm"
               >
                 Design
               </motion.div>
               <motion.div
                 animate={{ y: [5, -5, 5] }}
                 transition={{ repeat: Infinity, duration: 3.5 }}
-                className="absolute -bottom-4 -left-4 px-3 xl:px-4 py-1.5 xl:py-2 rounded-xl bg-brand-dark text-primary font-semibold text-xs xl:text-sm shadow-card"
+                className="absolute -bottom-4 -left-4 px-3 xl:px-4 py-1.5 xl:py-2 rounded-xl glass-strong text-primary font-semibold text-xs xl:text-sm"
               >
                 Motion
               </motion.div>
               <motion.div
                 animate={{ y: [-3, 7, -3] }}
                 transition={{ repeat: Infinity, duration: 4 }}
-                className="absolute top-1/2 -right-8 px-3 xl:px-4 py-1.5 xl:py-2 rounded-xl bg-background text-foreground font-semibold text-xs xl:text-sm shadow-card border border-border"
+                className="absolute top-1/2 -right-8 px-3 xl:px-4 py-1.5 xl:py-2 rounded-xl glass-strong text-foreground font-semibold text-xs xl:text-sm"
               >
                 Impact
               </motion.div>
