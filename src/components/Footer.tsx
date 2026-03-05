@@ -1,4 +1,4 @@
-import logoWhite from "@/assets/logo-white.png";
+import logoFooter from "@/assets/logo-footer.png";
 import { Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
           <div className="sm:col-span-2 md:col-span-1">
-            <img src={logoWhite} alt="VectoPix" className="h-12 sm:h-14 w-auto mb-4" />
+            <img src={logoFooter} alt="VectoPix" className="h-12 sm:h-14 w-auto mb-4" />
             <p className="text-sm leading-relaxed text-secondary-foreground/60">
               Professional graphic design, motion graphics & video editing studio crafting impactful brand experiences.
             </p>
