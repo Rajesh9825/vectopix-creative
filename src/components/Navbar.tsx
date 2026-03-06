@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-lg border-b border-secondary-foreground/10">
       <div className="container mx-auto flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 md:px-8">
         <button onClick={() => scrollTo("#home")} className="flex items-center gap-2 flex-shrink-0">
           <img src={logoWhite} alt="VectoPix" className="h-8 sm:h-10 w-auto" />
@@ -68,7 +68,7 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden glass border-b border-secondary-foreground/10 overflow-hidden"
+            className="md:hidden bg-brand-dark border-b border-secondary-foreground/10 overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (

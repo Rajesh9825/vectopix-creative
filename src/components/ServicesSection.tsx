@@ -58,7 +58,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left p-4 sm:p-6 md:p-8 rounded-2xl glass-card-light glass-shimmer"
+        className="w-full text-left p-4 sm:p-6 md:p-8 rounded-2xl bg-card border border-border shadow-card hover:shadow-elevated transition-all duration-300 hover:border-primary/30"
       >
         <div className="flex items-start justify-between gap-3 sm:gap-4">
           <div className="flex gap-3 sm:gap-4 items-start flex-1 min-w-0">

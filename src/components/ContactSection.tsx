@@ -50,7 +50,7 @@ const ContactSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.6 }}
           onSubmit={handleSubmit}
-          className="max-w-2xl mx-auto rounded-2xl p-[clamp(1.25rem,4vw,2.5rem)] glass-strong"
+          className="max-w-2xl mx-auto bg-background rounded-2xl p-[clamp(1.25rem,4vw,2.5rem)] shadow-elevated"
         >
           <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
             <input
@@ -59,7 +59,7 @@ const ContactSection = () => {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl glass-input text-secondary-foreground placeholder:text-secondary-foreground/50 focus:outline-none transition-all text-sm sm:text-base"
+              className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-sm sm:text-base"
             />
             <input
               type="email"
@@ -67,7 +67,7 @@ const ContactSection = () => {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl glass-input text-secondary-foreground placeholder:text-secondary-foreground/50 focus:outline-none transition-all text-sm sm:text-base"
+              className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-sm sm:text-base"
             />
           </div>
           <input
@@ -76,7 +76,7 @@ const ContactSection = () => {
             required
             value={formData.subject}
             onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-            className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl glass-input text-secondary-foreground placeholder:text-secondary-foreground/50 focus:outline-none transition-all mb-3 sm:mb-4 text-sm sm:text-base"
+            className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all mb-3 sm:mb-4 text-sm sm:text-base"
           />
           <textarea
             placeholder="Your Message"
@@ -84,7 +84,7 @@ const ContactSection = () => {
             required
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl glass-input text-secondary-foreground placeholder:text-secondary-foreground/50 focus:outline-none transition-all mb-4 sm:mb-6 resize-none text-sm sm:text-base"
+            className="w-full px-3 sm:px-4 py-3 sm:py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all mb-4 sm:mb-6 resize-none text-sm sm:text-base"
           />
           <button
             type="submit"

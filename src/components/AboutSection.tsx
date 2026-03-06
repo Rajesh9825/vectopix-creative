@@ -52,7 +52,7 @@ const AboutSection = () => {
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.3 + i * 0.15, duration: 0.5 }}
-                className="flex gap-4 sm:gap-5 p-4 sm:p-6 rounded-2xl glass-card-light glass-shimmer"
+                className="flex gap-4 sm:gap-5 p-4 sm:p-6 rounded-2xl bg-card border border-border shadow-card hover:shadow-elevated transition-shadow"
               >
                 <div className="flex-shrink-0 w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-primary/20 flex items-center justify-center">
                   <item.icon className="w-5 h-5 sm:w-7 sm:h-7 text-brand-dark" />
