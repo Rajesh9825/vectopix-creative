@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import { portfolioItems } from "@/components/PortfolioSection";
+import { portfolioItems } from "@/data/portfolioData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
