@@ -5,12 +5,45 @@ import packagingDesign from "@/assets/portfolio/packaging-design.jpg";
 import explainerVideo from "@/assets/portfolio/explainer-video.jpg";
 import socialCampaign from "@/assets/portfolio/social-campaign.jpg";
 
+// New images
+import brochureDesign1 from "@/assets/portfolio/brochure-design-1.jpg";
+import flyerDesign1 from "@/assets/portfolio/flyer-design-1.jpg";
+import posterDesign1 from "@/assets/portfolio/poster-design-1.jpg";
+import businessCard1 from "@/assets/portfolio/business-card-1.jpg";
+import bannerDesign1 from "@/assets/portfolio/banner-design-1.jpg";
+import socialMediaPost1 from "@/assets/portfolio/social-media-post-1.jpg";
+import socialMediaAds1 from "@/assets/portfolio/social-media-ads-1.jpg";
+import labelDesign1 from "@/assets/portfolio/label-design-1.jpg";
+import catalogDesign1 from "@/assets/portfolio/catalog-design-1.jpg";
+import infographicDesign1 from "@/assets/portfolio/infographic-design-1.jpg";
+import menuDesign1 from "@/assets/portfolio/menu-design-1.jpg";
+import companyProfile1 from "@/assets/portfolio/company-profile-1.jpg";
+
+// Motion Graphics
+import introOutro1 from "@/assets/portfolio/intro-outro-1.jpg";
+import socialMediaAnimation1 from "@/assets/portfolio/social-media-animation-1.jpg";
+import titleAnimation1 from "@/assets/portfolio/title-animation-1.jpg";
+import productAnimation1 from "@/assets/portfolio/product-animation-1.jpg";
+import kineticTypography1 from "@/assets/portfolio/kinetic-typography-1.jpg";
+import characterAnimation1 from "@/assets/portfolio/character-animation-1.jpg";
+import uiUxAnimation1 from "@/assets/portfolio/ui-ux-animation-1.jpg";
+
+// Video Editing
+import youtubeEditing1 from "@/assets/portfolio/youtube-editing-1.jpg";
+import socialReels1 from "@/assets/portfolio/social-reels-1.jpg";
+import productVideo1 from "@/assets/portfolio/product-video-1.jpg";
+import eventHighlight1 from "@/assets/portfolio/event-highlight-1.jpg";
+import documentary1 from "@/assets/portfolio/documentary-1.jpg";
+import musicVideo1 from "@/assets/portfolio/music-video-1.jpg";
+import weddingVideo1 from "@/assets/portfolio/wedding-video-1.jpg";
+import testimonialVideo1 from "@/assets/portfolio/testimonial-video-1.jpg";
+
 export interface Subcategory {
   id: string;
   name: string;
   category: string;
   description: string;
-  icon: string; // emoji
+  icon: string;
   workCount: number;
 }
 
@@ -64,14 +97,103 @@ export const subcategories: Subcategory[] = [
   { id: "testimonial-video", name: "Testimonial Video", category: "Video Editing", description: "Client & customer testimonial productions", icon: "🗣️", workCount: 15 },
 ];
 
-// Sample work items mapped to subcategories (using existing images as placeholders)
 export const portfolioItems: PortfolioWork[] = [
+  // Graphic Design — Brochure Design
+  { id: "spa-brochure", title: "Luxury Spa Tri-fold Brochure", category: "Graphic Design", subcategory: "brochure-design", image: brochureDesign1 },
+
+  // Graphic Design — Flyer Design
+  { id: "festival-flyer", title: "Music Festival Event Flyer", category: "Graphic Design", subcategory: "flyer-design", image: flyerDesign1 },
+
+  // Graphic Design — Poster Design
+  { id: "art-exhibition-poster", title: "Art Exhibition Poster", category: "Graphic Design", subcategory: "poster-design", image: posterDesign1 },
+
+  // Graphic Design — Brand Identity
   { id: "luxe-print", title: "Brand Identity — Luxe Print Co.", category: "Graphic Design", subcategory: "brand-identity", image: brandIdentity },
+
+  // Graphic Design — Business Card
+  { id: "gold-foil-cards", title: "Gold Foil Premium Business Cards", category: "Graphic Design", subcategory: "business-card", image: businessCard1 },
+
+  // Graphic Design — Banner Design
+  { id: "ecommerce-banner", title: "E-Commerce Promotional Banner", category: "Graphic Design", subcategory: "banner-design", image: bannerDesign1 },
+
+  // Graphic Design — Social Media Post
+  { id: "stylehub-social", title: "Social Media Campaign — StyleHub", category: "Graphic Design", subcategory: "social-media-post", image: socialMediaPost1 },
+  { id: "stylehub-social-2", title: "Fashion Brand Social Grid", category: "Graphic Design", subcategory: "social-media-post", image: socialCampaign },
+
+  // Graphic Design — Social Media Ads
+  { id: "fitness-ads", title: "Fitness Brand Ad Creatives", category: "Graphic Design", subcategory: "social-media-ads", image: socialMediaAds1 },
+
+  // Graphic Design — Packaging Design
   { id: "freshroots-pkg", title: "Packaging Design — FreshRoots", category: "Graphic Design", subcategory: "packaging-design", image: packagingDesign },
-  { id: "stylehub-social", title: "Social Media Campaign — StyleHub", category: "Graphic Design", subcategory: "social-media-post", image: socialCampaign },
+
+  // Graphic Design — Label Design
+  { id: "coffee-label", title: "Artisan Coffee Label Design", category: "Graphic Design", subcategory: "label-design", image: labelDesign1 },
+
+  // Graphic Design — Catalog Design
+  { id: "fashion-catalog", title: "Fashion Lookbook Catalog", category: "Graphic Design", subcategory: "catalog-design", image: catalogDesign1 },
+
+  // Graphic Design — Infographic Design
+  { id: "business-infographic", title: "Business Statistics Infographic", category: "Graphic Design", subcategory: "infographic-design", image: infographicDesign1 },
+
+  // Graphic Design — Menu Design
+  { id: "fine-dining-menu", title: "Fine Dining Restaurant Menu", category: "Graphic Design", subcategory: "menu-design", image: menuDesign1 },
+
+  // Graphic Design — Company Profile
+  { id: "corporate-profile", title: "Corporate Company Profile", category: "Graphic Design", subcategory: "company-profile", image: companyProfile1 },
+
+  // Motion Graphics — Logo Animation
   { id: "techvista-logo", title: "Logo Animation — TechVista", category: "Motion Graphics", subcategory: "logo-animation", image: logoAnimation },
+
+  // Motion Graphics — Intro & Outro
+  { id: "cinematic-intro", title: "Cinematic Logo Reveal Intro", category: "Motion Graphics", subcategory: "intro-outro", image: introOutro1 },
+
+  // Motion Graphics — Explainer Animation
   { id: "finflow-explainer", title: "Explainer Video — FinFlow App", category: "Motion Graphics", subcategory: "explainer-animation", image: explainerVideo },
+
+  // Motion Graphics — Social Media Animation
+  { id: "social-animation-story", title: "Animated Instagram Story", category: "Motion Graphics", subcategory: "social-media-animation", image: socialMediaAnimation1 },
+
+  // Motion Graphics — Title Animation
+  { id: "movie-titles", title: "Cinematic Title Sequence", category: "Motion Graphics", subcategory: "title-animation", image: titleAnimation1 },
+
+  // Motion Graphics — Product Animation
+  { id: "phone-showcase", title: "3D Smartphone Product Showcase", category: "Motion Graphics", subcategory: "product-animation", image: productAnimation1 },
+
+  // Motion Graphics — Kinetic Typography
+  { id: "kinetic-text", title: "Dynamic Kinetic Typography", category: "Motion Graphics", subcategory: "kinetic-typography", image: kineticTypography1 },
+
+  // Motion Graphics — Character Animation
+  { id: "mascot-animation", title: "Brand Mascot Character Animation", category: "Motion Graphics", subcategory: "character-animation", image: characterAnimation1 },
+
+  // Motion Graphics — UI/UX Animation
+  { id: "app-ui-motion", title: "Mobile App UI Micro-interactions", category: "Motion Graphics", subcategory: "ui-ux-animation", image: uiUxAnimation1 },
+
+  // Video Editing — Corporate Video
   { id: "summit-2024", title: "Corporate Video — Summit 2024", category: "Video Editing", subcategory: "corporate-video", image: corporateVideo },
+
+  // Video Editing — YouTube
+  { id: "youtube-vlog", title: "YouTube Vlog Editing", category: "Video Editing", subcategory: "youtube-editing", image: youtubeEditing1 },
+
+  // Video Editing — Social Reels
+  { id: "lifestyle-reels", title: "Lifestyle Instagram Reels", category: "Video Editing", subcategory: "social-reels", image: socialReels1 },
+
+  // Video Editing — Product Video
+  { id: "cosmetic-product", title: "Cosmetics Product Showcase", category: "Video Editing", subcategory: "product-video", image: productVideo1 },
+
+  // Video Editing — Event Highlight
+  { id: "tech-conference", title: "Tech Conference Highlight Reel", category: "Video Editing", subcategory: "event-highlight", image: eventHighlight1 },
+
+  // Video Editing — Documentary
+  { id: "short-doc", title: "Short Documentary Film", category: "Video Editing", subcategory: "documentary", image: documentary1 },
+
+  // Video Editing — Music Video
+  { id: "concert-music-vid", title: "Live Concert Music Video", category: "Video Editing", subcategory: "music-video", image: musicVideo1 },
+
+  // Video Editing — Wedding Video
+  { id: "golden-hour-wedding", title: "Golden Hour Wedding Film", category: "Video Editing", subcategory: "wedding-video", image: weddingVideo1 },
+
+  // Video Editing — Testimonial Video
+  { id: "client-testimonial", title: "Client Testimonial Production", category: "Video Editing", subcategory: "testimonial-video", image: testimonialVideo1 },
 ];
 
 export const getSubcategoriesByCategory = (category: string) =>
