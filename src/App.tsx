@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import CategoryPortfolio from "./pages/CategoryPortfolio";
 import SubcategoryPortfolio from "./pages/SubcategoryPortfolio";
-import WorkDetail from "./pages/WorkDetail";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
