@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import CategoryPortfolio from "./pages/CategoryPortfolio";
 import SubcategoryPortfolio from "./pages/SubcategoryPortfolio";
-import WorkDetail from "./pages/WorkDetail";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,7 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/portfolio/work/:workId" element={<WorkDetail />} />
+          
           <Route path="/portfolio/subcategory/:subcategoryId" element={<SubcategoryPortfolio />} />
           <Route path="/portfolio/:category" element={<CategoryPortfolio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
