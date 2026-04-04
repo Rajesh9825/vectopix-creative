@@ -21,7 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/portfolio/work/:workId" element={<WorkDetail />} />
+          
           <Route path="/portfolio/subcategory/:subcategoryId" element={<SubcategoryPortfolio />} />
           <Route path="/portfolio/:category" element={<CategoryPortfolio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
