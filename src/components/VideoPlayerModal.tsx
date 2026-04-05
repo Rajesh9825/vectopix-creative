@@ -57,7 +57,7 @@ const EmbedPlayer = ({ url, title }: { url: string; title: string }) => {
 
   if (type === "youtube") {
     const id = getYouTubeId(url || "");
-    embedSrc = `https://www.youtube.com/embed/${id}?autoplay=0&rel=0&modestbranding=1&controls=1`;
+    embedSrc = `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&controls=1&showinfo=1&fs=1&cc_load_policy=0&iv_load_policy=3&playsinline=1`;
   } else if (type === "drive") {
     embedSrc = getDriveEmbedUrl(url || "");
   }
