@@ -34,24 +34,7 @@ import companyProfile1 from "@/assets/portfolio/company-profile-1.jpg";
 import companyProfile2 from "@/assets/portfolio/company-profile-2.jpg";
 import packagingDesign2 from "@/assets/portfolio/packaging-design-2.jpg";
 
-// Motion Graphics thumbnails
-import introOutro1 from "@/assets/portfolio/intro-outro-1.jpg";
-import socialMediaAnimation1 from "@/assets/portfolio/social-media-animation-1.jpg";
-import titleAnimation1 from "@/assets/portfolio/title-animation-1.jpg";
-import productAnimation1 from "@/assets/portfolio/product-animation-1.jpg";
-import kineticTypography1 from "@/assets/portfolio/kinetic-typography-1.jpg";
-import characterAnimation1 from "@/assets/portfolio/character-animation-1.jpg";
-import uiUxAnimation1 from "@/assets/portfolio/ui-ux-animation-1.jpg";
-
-// Video Editing thumbnails
-import youtubeEditing1 from "@/assets/portfolio/youtube-editing-1.jpg";
-import socialReels1 from "@/assets/portfolio/social-reels-1.jpg";
-import productVideo1 from "@/assets/portfolio/product-video-1.jpg";
-import eventHighlight1 from "@/assets/portfolio/event-highlight-1.jpg";
-import documentary1 from "@/assets/portfolio/documentary-1.jpg";
-import musicVideo1 from "@/assets/portfolio/music-video-1.jpg";
-import weddingVideo1 from "@/assets/portfolio/wedding-video-1.jpg";
-import testimonialVideo1 from "@/assets/portfolio/testimonial-video-1.jpg";
+// Note: Motion Graphics & Video Editing thumbnails are auto-generated from YouTube URLs
 
 export interface Subcategory {
   id: string;
