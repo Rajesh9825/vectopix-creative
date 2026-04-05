@@ -1,20 +1,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, ImageIcon, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, ImageIcon } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSubcategoryById, getWorkBySubcategory } from "@/data/portfolioData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ImageLightbox from "@/components/ImageLightbox";
-import VideoPlayerModal from "@/components/VideoPlayerModal";
+import InlineVideoCard from "@/components/InlineVideoCard";
 
 const SubcategoryPortfolio = () => {
   const { subcategoryId } = useParams<{ subcategoryId: string }>();
   const navigate = useNavigate();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [videoOpen, setVideoOpen] = useState(false);
-  const [videoIndex, setVideoIndex] = useState(0);
 
   const sub = getSubcategoryById(subcategoryId || "");
   const works = getWorkBySubcategory(subcategoryId || "");
@@ -34,14 +32,9 @@ const SubcategoryPortfolio = () => {
     );
   }
 
-  const handleWorkClick = (index: number) => {
-    if (isVideoCategory) {
-      setVideoIndex(index);
-      setVideoOpen(true);
-    } else {
-      setLightboxIndex(index);
-      setLightboxOpen(true);
-    }
+  const handleImageClick = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
   };
 
   return (
@@ -96,7 +89,22 @@ const SubcategoryPortfolio = () => {
               Browse Other Categories
             </button>
           </div>
+        ) : isVideoCategory ? (
+          /* Video cards - play inline */
+          <motion.div layout className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            {works.map((item, i) => (
+              <InlineVideoCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                image={item.image}
+                videoUrl={item.videoUrl}
+                index={i}
+              />
+            ))}
+          </motion.div>
         ) : (
+          /* Image cards - open in lightbox */
           <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {works.map((item, i) => (
               <motion.div
@@ -106,7 +114,7 @@ const SubcategoryPortfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="group cursor-pointer"
-                onClick={() => handleWorkClick(i)}
+                onClick={() => handleImageClick(i)}
               >
                 <div className="rounded-2xl aspect-[4/3] relative overflow-hidden border border-border bg-card shadow-sm hover:shadow-xl transition-all duration-300">
                   <img
@@ -116,37 +124,18 @@ const SubcategoryPortfolio = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                  {/* Video play icon overlay */}
-                  {isVideoCategory && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
-                        <Play className="w-6 h-6 sm:w-7 sm:h-7 text-white ml-0.5" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-1">
+                      <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
+                        <ArrowRight className="w-5 h-5 text-white" />
                       </div>
+                      <span className="text-xs text-white/80 font-medium">View</span>
                     </div>
-                  )}
-
-                  {/* Image zoom hint */}
-                  {!isVideoCategory && (
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-1">
-                        <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
-                          <ArrowRight className="w-5 h-5 text-white" />
-                        </div>
-                        <span className="text-xs text-white/80 font-medium">View</span>
-                      </div>
-                    </div>
-                  )}
-
+                  </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                     <h3 className="text-base sm:text-lg font-bold mt-1 text-white leading-tight">
                       {item.title}
                     </h3>
-                    {isVideoCategory && (
-                      <span className="inline-flex items-center gap-1 mt-1.5 text-xs text-white/60">
-                        <Play className="w-3 h-3" /> Click to play
-                      </span>
-                    )}
                   </div>
                 </div>
               </motion.div>
@@ -161,14 +150,6 @@ const SubcategoryPortfolio = () => {
         currentIndex={lightboxIndex}
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
-      />
-
-      {/* Video Player */}
-      <VideoPlayerModal
-        videos={works.filter((w) => w.type === "video")}
-        currentIndex={videoIndex}
-        isOpen={videoOpen}
-        onClose={() => setVideoOpen(false)}
       />
 
       <Footer />
