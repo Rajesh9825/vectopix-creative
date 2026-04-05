@@ -1,8 +1,5 @@
 import brandIdentity from "@/assets/portfolio/brand-identity.jpg";
-import logoAnimation from "@/assets/portfolio/logo-animation.jpg";
-import corporateVideo from "@/assets/portfolio/corporate-video.jpg";
 import packagingDesign from "@/assets/portfolio/packaging-design.jpg";
-import explainerVideo from "@/assets/portfolio/explainer-video.jpg";
 import socialCampaign from "@/assets/portfolio/social-campaign.jpg";
 
 // Graphic Design images
@@ -34,24 +31,7 @@ import companyProfile1 from "@/assets/portfolio/company-profile-1.jpg";
 import companyProfile2 from "@/assets/portfolio/company-profile-2.jpg";
 import packagingDesign2 from "@/assets/portfolio/packaging-design-2.jpg";
 
-// Motion Graphics thumbnails
-import introOutro1 from "@/assets/portfolio/intro-outro-1.jpg";
-import socialMediaAnimation1 from "@/assets/portfolio/social-media-animation-1.jpg";
-import titleAnimation1 from "@/assets/portfolio/title-animation-1.jpg";
-import productAnimation1 from "@/assets/portfolio/product-animation-1.jpg";
-import kineticTypography1 from "@/assets/portfolio/kinetic-typography-1.jpg";
-import characterAnimation1 from "@/assets/portfolio/character-animation-1.jpg";
-import uiUxAnimation1 from "@/assets/portfolio/ui-ux-animation-1.jpg";
-
-// Video Editing thumbnails
-import youtubeEditing1 from "@/assets/portfolio/youtube-editing-1.jpg";
-import socialReels1 from "@/assets/portfolio/social-reels-1.jpg";
-import productVideo1 from "@/assets/portfolio/product-video-1.jpg";
-import eventHighlight1 from "@/assets/portfolio/event-highlight-1.jpg";
-import documentary1 from "@/assets/portfolio/documentary-1.jpg";
-import musicVideo1 from "@/assets/portfolio/music-video-1.jpg";
-import weddingVideo1 from "@/assets/portfolio/wedding-video-1.jpg";
-import testimonialVideo1 from "@/assets/portfolio/testimonial-video-1.jpg";
+// Note: Motion Graphics & Video Editing thumbnails are auto-generated from YouTube URLs
 
 export interface Subcategory {
   id: string;
@@ -72,6 +52,20 @@ export interface PortfolioWork {
   image: string;
   type: WorkType;
   videoUrl?: string;
+}
+
+/** Auto-generate YouTube thumbnail from a YouTube URL */
+function ytThumb(url: string): string {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=)([^&\s]+)/,
+    /(?:youtu\.be\/)([^?\s]+)/,
+    /(?:youtube\.com\/embed\/)([^?\s]+)/,
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
+  }
+  return "";
 }
 
 export const categories = ["All", "Graphic Design", "Motion Graphics", "Video Editing"];
@@ -237,77 +231,77 @@ export const portfolioItems: PortfolioWork[] = [
 
   // ===== MOTION GRAPHICS (type: "video") =====
   // Logo Animation
-  { id: "techvista-logo", title: "Logo Animation — TechVista", category: "Motion Graphics", subcategory: "logo-animation", image: logoAnimation, type: "video", videoUrl: SAMPLE_VIDEOS.logoAnim1 },
-  { id: "neon-logo-reveal", title: "Neon Logo Reveal Animation", category: "Motion Graphics", subcategory: "logo-animation", image: logoAnimation, type: "video", videoUrl: SAMPLE_VIDEOS.logoAnim2 },
+  { id: "techvista-logo", title: "Logo Animation — TechVista", category: "Motion Graphics", subcategory: "logo-animation", image: ytThumb(SAMPLE_VIDEOS.logoAnim1), type: "video", videoUrl: SAMPLE_VIDEOS.logoAnim1 },
+  { id: "neon-logo-reveal", title: "Neon Logo Reveal Animation", category: "Motion Graphics", subcategory: "logo-animation", image: ytThumb(SAMPLE_VIDEOS.logoAnim2), type: "video", videoUrl: SAMPLE_VIDEOS.logoAnim2 },
 
   // Intro & Outro
-  { id: "cinematic-intro", title: "Cinematic Logo Reveal Intro", category: "Motion Graphics", subcategory: "intro-outro", image: introOutro1, type: "video", videoUrl: SAMPLE_VIDEOS.introOutro1 },
-  { id: "minimal-outro", title: "Minimal Clean Outro", category: "Motion Graphics", subcategory: "intro-outro", image: introOutro1, type: "video", videoUrl: SAMPLE_VIDEOS.introOutro2 },
+  { id: "cinematic-intro", title: "Cinematic Logo Reveal Intro", category: "Motion Graphics", subcategory: "intro-outro", image: ytThumb(SAMPLE_VIDEOS.introOutro1), type: "video", videoUrl: SAMPLE_VIDEOS.introOutro1 },
+  { id: "minimal-outro", title: "Minimal Clean Outro", category: "Motion Graphics", subcategory: "intro-outro", image: ytThumb(SAMPLE_VIDEOS.introOutro2), type: "video", videoUrl: SAMPLE_VIDEOS.introOutro2 },
 
   // Explainer Animation
-  { id: "finflow-explainer", title: "Explainer Video — FinFlow App", category: "Motion Graphics", subcategory: "explainer-animation", image: explainerVideo, type: "video", videoUrl: SAMPLE_VIDEOS.explainer1 },
-  { id: "saas-explainer", title: "SaaS Product Explainer", category: "Motion Graphics", subcategory: "explainer-animation", image: explainerVideo, type: "video", videoUrl: SAMPLE_VIDEOS.explainer2 },
+  { id: "finflow-explainer", title: "Explainer Video — FinFlow App", category: "Motion Graphics", subcategory: "explainer-animation", image: ytThumb(SAMPLE_VIDEOS.explainer1), type: "video", videoUrl: SAMPLE_VIDEOS.explainer1 },
+  { id: "saas-explainer", title: "SaaS Product Explainer", category: "Motion Graphics", subcategory: "explainer-animation", image: ytThumb(SAMPLE_VIDEOS.explainer2), type: "video", videoUrl: SAMPLE_VIDEOS.explainer2 },
 
   // Social Media Animation
-  { id: "social-animation-story", title: "Animated Instagram Story", category: "Motion Graphics", subcategory: "social-media-animation", image: socialMediaAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.socialAnim1 },
-  { id: "social-promo-animation", title: "Social Media Promo Animation", category: "Motion Graphics", subcategory: "social-media-animation", image: socialMediaAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.socialAnim2 },
+  { id: "social-animation-story", title: "Animated Instagram Story", category: "Motion Graphics", subcategory: "social-media-animation", image: ytThumb(SAMPLE_VIDEOS.socialAnim1), type: "video", videoUrl: SAMPLE_VIDEOS.socialAnim1 },
+  { id: "social-promo-animation", title: "Social Media Promo Animation", category: "Motion Graphics", subcategory: "social-media-animation", image: ytThumb(SAMPLE_VIDEOS.socialAnim2), type: "video", videoUrl: SAMPLE_VIDEOS.socialAnim2 },
 
   // Title Animation
-  { id: "movie-titles", title: "Cinematic Title Sequence", category: "Motion Graphics", subcategory: "title-animation", image: titleAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.titleAnim1 },
-  { id: "broadcast-titles", title: "Broadcast Title Graphics", category: "Motion Graphics", subcategory: "title-animation", image: titleAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.titleAnim2 },
+  { id: "movie-titles", title: "Cinematic Title Sequence", category: "Motion Graphics", subcategory: "title-animation", image: ytThumb(SAMPLE_VIDEOS.titleAnim1), type: "video", videoUrl: SAMPLE_VIDEOS.titleAnim1 },
+  { id: "broadcast-titles", title: "Broadcast Title Graphics", category: "Motion Graphics", subcategory: "title-animation", image: ytThumb(SAMPLE_VIDEOS.titleAnim2), type: "video", videoUrl: SAMPLE_VIDEOS.titleAnim2 },
 
   // Product Animation
-  { id: "phone-showcase", title: "3D Smartphone Product Showcase", category: "Motion Graphics", subcategory: "product-animation", image: productAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.productAnim1 },
-  { id: "watch-showcase", title: "Luxury Watch 3D Animation", category: "Motion Graphics", subcategory: "product-animation", image: productAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.productAnim2 },
+  { id: "phone-showcase", title: "3D Smartphone Product Showcase", category: "Motion Graphics", subcategory: "product-animation", image: ytThumb(SAMPLE_VIDEOS.productAnim1), type: "video", videoUrl: SAMPLE_VIDEOS.productAnim1 },
+  { id: "watch-showcase", title: "Luxury Watch 3D Animation", category: "Motion Graphics", subcategory: "product-animation", image: ytThumb(SAMPLE_VIDEOS.productAnim2), type: "video", videoUrl: SAMPLE_VIDEOS.productAnim2 },
 
   // Kinetic Typography
-  { id: "kinetic-text", title: "Dynamic Kinetic Typography", category: "Motion Graphics", subcategory: "kinetic-typography", image: kineticTypography1, type: "video", videoUrl: SAMPLE_VIDEOS.kinetic1 },
-  { id: "lyric-typography", title: "Lyric Video Typography", category: "Motion Graphics", subcategory: "kinetic-typography", image: kineticTypography1, type: "video", videoUrl: SAMPLE_VIDEOS.kinetic2 },
+  { id: "kinetic-text", title: "Dynamic Kinetic Typography", category: "Motion Graphics", subcategory: "kinetic-typography", image: ytThumb(SAMPLE_VIDEOS.kinetic1), type: "video", videoUrl: SAMPLE_VIDEOS.kinetic1 },
+  { id: "lyric-typography", title: "Lyric Video Typography", category: "Motion Graphics", subcategory: "kinetic-typography", image: ytThumb(SAMPLE_VIDEOS.kinetic2), type: "video", videoUrl: SAMPLE_VIDEOS.kinetic2 },
 
   // Character Animation
-  { id: "mascot-animation", title: "Brand Mascot Character Animation", category: "Motion Graphics", subcategory: "character-animation", image: characterAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.character1 },
-  { id: "storybook-animation", title: "Storybook Character Scenes", category: "Motion Graphics", subcategory: "character-animation", image: characterAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.character2 },
+  { id: "mascot-animation", title: "Brand Mascot Character Animation", category: "Motion Graphics", subcategory: "character-animation", image: ytThumb(SAMPLE_VIDEOS.character1), type: "video", videoUrl: SAMPLE_VIDEOS.character1 },
+  { id: "storybook-animation", title: "Storybook Character Scenes", category: "Motion Graphics", subcategory: "character-animation", image: ytThumb(SAMPLE_VIDEOS.character2), type: "video", videoUrl: SAMPLE_VIDEOS.character2 },
 
   // UI/UX Animation
-  { id: "app-ui-motion", title: "Mobile App UI Micro-interactions", category: "Motion Graphics", subcategory: "ui-ux-animation", image: uiUxAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.uiux1 },
-  { id: "dashboard-motion", title: "Dashboard Transition Animation", category: "Motion Graphics", subcategory: "ui-ux-animation", image: uiUxAnimation1, type: "video", videoUrl: SAMPLE_VIDEOS.uiux2 },
+  { id: "app-ui-motion", title: "Mobile App UI Micro-interactions", category: "Motion Graphics", subcategory: "ui-ux-animation", image: ytThumb(SAMPLE_VIDEOS.uiux1), type: "video", videoUrl: SAMPLE_VIDEOS.uiux1 },
+  { id: "dashboard-motion", title: "Dashboard Transition Animation", category: "Motion Graphics", subcategory: "ui-ux-animation", image: ytThumb(SAMPLE_VIDEOS.uiux2), type: "video", videoUrl: SAMPLE_VIDEOS.uiux2 },
 
   // ===== VIDEO EDITING (type: "video") =====
   // Corporate Video
-  { id: "summit-2024", title: "Corporate Video — Summit 2024", category: "Video Editing", subcategory: "corporate-video", image: corporateVideo, type: "video", videoUrl: SAMPLE_VIDEOS.corporate1 },
-  { id: "annual-report-video", title: "Annual Report Video Presentation", category: "Video Editing", subcategory: "corporate-video", image: corporateVideo, type: "video", videoUrl: SAMPLE_VIDEOS.corporate2 },
+  { id: "summit-2024", title: "Corporate Video — Summit 2024", category: "Video Editing", subcategory: "corporate-video", image: ytThumb(SAMPLE_VIDEOS.corporate1), type: "video", videoUrl: SAMPLE_VIDEOS.corporate1 },
+  { id: "annual-report-video", title: "Annual Report Video Presentation", category: "Video Editing", subcategory: "corporate-video", image: ytThumb(SAMPLE_VIDEOS.corporate2), type: "video", videoUrl: SAMPLE_VIDEOS.corporate2 },
 
   // YouTube
-  { id: "youtube-vlog", title: "YouTube Vlog Editing", category: "Video Editing", subcategory: "youtube-editing", image: youtubeEditing1, type: "video", videoUrl: SAMPLE_VIDEOS.youtube1 },
-  { id: "youtube-tutorial", title: "Tutorial Video Editing", category: "Video Editing", subcategory: "youtube-editing", image: youtubeEditing1, type: "video", videoUrl: SAMPLE_VIDEOS.youtube2 },
+  { id: "youtube-vlog", title: "YouTube Vlog Editing", category: "Video Editing", subcategory: "youtube-editing", image: ytThumb(SAMPLE_VIDEOS.youtube1), type: "video", videoUrl: SAMPLE_VIDEOS.youtube1 },
+  { id: "youtube-tutorial", title: "Tutorial Video Editing", category: "Video Editing", subcategory: "youtube-editing", image: ytThumb(SAMPLE_VIDEOS.youtube2), type: "video", videoUrl: SAMPLE_VIDEOS.youtube2 },
 
   // Social Reels
-  { id: "lifestyle-reels", title: "Lifestyle Instagram Reels", category: "Video Editing", subcategory: "social-reels", image: socialReels1, type: "video", videoUrl: SAMPLE_VIDEOS.reels1 },
-  { id: "fashion-reels", title: "Fashion Brand TikTok Reels", category: "Video Editing", subcategory: "social-reels", image: socialReels1, type: "video", videoUrl: SAMPLE_VIDEOS.reels2 },
+  { id: "lifestyle-reels", title: "Lifestyle Instagram Reels", category: "Video Editing", subcategory: "social-reels", image: ytThumb(SAMPLE_VIDEOS.reels1), type: "video", videoUrl: SAMPLE_VIDEOS.reels1 },
+  { id: "fashion-reels", title: "Fashion Brand TikTok Reels", category: "Video Editing", subcategory: "social-reels", image: ytThumb(SAMPLE_VIDEOS.reels2), type: "video", videoUrl: SAMPLE_VIDEOS.reels2 },
 
   // Product Video
-  { id: "cosmetic-product", title: "Cosmetics Product Showcase", category: "Video Editing", subcategory: "product-video", image: productVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.productVid1 },
-  { id: "tech-unboxing", title: "Tech Product Unboxing", category: "Video Editing", subcategory: "product-video", image: productVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.productVid2 },
+  { id: "cosmetic-product", title: "Cosmetics Product Showcase", category: "Video Editing", subcategory: "product-video", image: ytThumb(SAMPLE_VIDEOS.productVid1), type: "video", videoUrl: SAMPLE_VIDEOS.productVid1 },
+  { id: "tech-unboxing", title: "Tech Product Unboxing", category: "Video Editing", subcategory: "product-video", image: ytThumb(SAMPLE_VIDEOS.productVid2), type: "video", videoUrl: SAMPLE_VIDEOS.productVid2 },
 
   // Event Highlight
-  { id: "tech-conference", title: "Tech Conference Highlight Reel", category: "Video Editing", subcategory: "event-highlight", image: eventHighlight1, type: "video", videoUrl: SAMPLE_VIDEOS.event1 },
-  { id: "gala-event", title: "Corporate Gala Event Video", category: "Video Editing", subcategory: "event-highlight", image: eventHighlight1, type: "video", videoUrl: SAMPLE_VIDEOS.event2 },
+  { id: "tech-conference", title: "Tech Conference Highlight Reel", category: "Video Editing", subcategory: "event-highlight", image: ytThumb(SAMPLE_VIDEOS.event1), type: "video", videoUrl: SAMPLE_VIDEOS.event1 },
+  { id: "gala-event", title: "Corporate Gala Event Video", category: "Video Editing", subcategory: "event-highlight", image: ytThumb(SAMPLE_VIDEOS.event2), type: "video", videoUrl: SAMPLE_VIDEOS.event2 },
 
   // Documentary
-  { id: "short-doc", title: "Short Documentary Film", category: "Video Editing", subcategory: "documentary", image: documentary1, type: "video", videoUrl: SAMPLE_VIDEOS.doc1 },
-  { id: "nature-doc", title: "Nature Documentary Edit", category: "Video Editing", subcategory: "documentary", image: documentary1, type: "video", videoUrl: SAMPLE_VIDEOS.doc2 },
+  { id: "short-doc", title: "Short Documentary Film", category: "Video Editing", subcategory: "documentary", image: ytThumb(SAMPLE_VIDEOS.doc1), type: "video", videoUrl: SAMPLE_VIDEOS.doc1 },
+  { id: "nature-doc", title: "Nature Documentary Edit", category: "Video Editing", subcategory: "documentary", image: ytThumb(SAMPLE_VIDEOS.doc2), type: "video", videoUrl: SAMPLE_VIDEOS.doc2 },
 
   // Music Video
-  { id: "concert-music-vid", title: "Live Concert Music Video", category: "Video Editing", subcategory: "music-video", image: musicVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.music1 },
-  { id: "indie-music-vid", title: "Indie Artist Music Video", category: "Video Editing", subcategory: "music-video", image: musicVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.music2 },
+  { id: "concert-music-vid", title: "Live Concert Music Video", category: "Video Editing", subcategory: "music-video", image: ytThumb(SAMPLE_VIDEOS.music1), type: "video", videoUrl: SAMPLE_VIDEOS.music1 },
+  { id: "indie-music-vid", title: "Indie Artist Music Video", category: "Video Editing", subcategory: "music-video", image: ytThumb(SAMPLE_VIDEOS.music2), type: "video", videoUrl: SAMPLE_VIDEOS.music2 },
 
   // Wedding Video
-  { id: "golden-hour-wedding", title: "Golden Hour Wedding Film", category: "Video Editing", subcategory: "wedding-video", image: weddingVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.wedding1 },
-  { id: "destination-wedding", title: "Destination Wedding Highlight", category: "Video Editing", subcategory: "wedding-video", image: weddingVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.wedding2 },
+  { id: "golden-hour-wedding", title: "Golden Hour Wedding Film", category: "Video Editing", subcategory: "wedding-video", image: ytThumb(SAMPLE_VIDEOS.wedding1), type: "video", videoUrl: SAMPLE_VIDEOS.wedding1 },
+  { id: "destination-wedding", title: "Destination Wedding Highlight", category: "Video Editing", subcategory: "wedding-video", image: ytThumb(SAMPLE_VIDEOS.wedding2), type: "video", videoUrl: SAMPLE_VIDEOS.wedding2 },
 
   // Testimonial Video
-  { id: "client-testimonial", title: "Client Testimonial Production", category: "Video Editing", subcategory: "testimonial-video", image: testimonialVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.testimonial1 },
-  { id: "employee-testimonial", title: "Employee Spotlight Video", category: "Video Editing", subcategory: "testimonial-video", image: testimonialVideo1, type: "video", videoUrl: SAMPLE_VIDEOS.testimonial2 },
+  { id: "client-testimonial", title: "Client Testimonial Production", category: "Video Editing", subcategory: "testimonial-video", image: ytThumb(SAMPLE_VIDEOS.testimonial1), type: "video", videoUrl: SAMPLE_VIDEOS.testimonial1 },
+  { id: "employee-testimonial", title: "Employee Spotlight Video", category: "Video Editing", subcategory: "testimonial-video", image: ytThumb(SAMPLE_VIDEOS.testimonial2), type: "video", videoUrl: SAMPLE_VIDEOS.testimonial2 },
 ];
 
 export const getSubcategoriesByCategory = (category: string) =>
