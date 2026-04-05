@@ -116,44 +116,63 @@ export const subcategories: Subcategory[] = [
   { id: "testimonial-video", name: "Testimonial Video", category: "Video Editing", description: "Client & customer testimonial productions", icon: "🗣️", workCount: 15 },
 ];
 
-// Free sample videos from various sources
+// YouTube video URLs for Motion Graphics & Video Editing categories
+// Replace these with your actual YouTube/Drive/Cloudinary URLs
 const SAMPLE_VIDEOS = {
-  logoAnim1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  logoAnim2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-  introOutro1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-  introOutro2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-  explainer1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  explainer2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-  socialAnim1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  socialAnim2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-  titleAnim1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-  titleAnim2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-  productAnim1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  productAnim2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-  kinetic1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  kinetic2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-  character1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-  character2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-  uiux1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  uiux2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-  corporate1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-  corporate2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  youtube1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  youtube2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-  reels1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-  reels2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-  productVid1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  productVid2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-  event1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  event2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-  doc1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-  doc2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  music1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-  music2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-  wedding1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  wedding2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-  testimonial1: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  testimonial2: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+  // Logo Animation
+  logoAnim1: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  logoAnim2: "https://www.youtube.com/watch?v=9bZkp7q19f0",
+  // Intro & Outro
+  introOutro1: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+  introOutro2: "https://www.youtube.com/watch?v=JGwWNGJdvx8",
+  // Explainer Animation
+  explainer1: "https://www.youtube.com/watch?v=RgKAFK5djSk",
+  explainer2: "https://www.youtube.com/watch?v=OPf0YbXqDm0",
+  // Social Media Animation
+  socialAnim1: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+  socialAnim2: "https://www.youtube.com/watch?v=60ItHLz5WEA",
+  // Title Animation
+  titleAnim1: "https://www.youtube.com/watch?v=YQHsXMglC9A",
+  titleAnim2: "https://www.youtube.com/watch?v=CevxZvSJLk8",
+  // Product Animation
+  productAnim1: "https://www.youtube.com/watch?v=hT_nvWreIhg",
+  productAnim2: "https://www.youtube.com/watch?v=lp-EO5I60KA",
+  // Kinetic Typography
+  kinetic1: "https://www.youtube.com/watch?v=bo_efYhYU2A",
+  kinetic2: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
+  // Character Animation
+  character1: "https://www.youtube.com/watch?v=HP-MbfHFUqs",
+  character2: "https://www.youtube.com/watch?v=e-ORhEE9VVg",
+  // UI/UX Animation
+  uiux1: "https://www.youtube.com/watch?v=IUN664s7N-c",
+  uiux2: "https://www.youtube.com/watch?v=Sagg08DrO5U",
+  // Corporate Video
+  corporate1: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  corporate2: "https://www.youtube.com/watch?v=9bZkp7q19f0",
+  // YouTube Editing
+  youtube1: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+  youtube2: "https://www.youtube.com/watch?v=JGwWNGJdvx8",
+  // Social Reels
+  reels1: "https://www.youtube.com/watch?v=RgKAFK5djSk",
+  reels2: "https://www.youtube.com/watch?v=OPf0YbXqDm0",
+  // Product Video
+  productVid1: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+  productVid2: "https://www.youtube.com/watch?v=60ItHLz5WEA",
+  // Event Highlight
+  event1: "https://www.youtube.com/watch?v=YQHsXMglC9A",
+  event2: "https://www.youtube.com/watch?v=CevxZvSJLk8",
+  // Documentary
+  doc1: "https://www.youtube.com/watch?v=hT_nvWreIhg",
+  doc2: "https://www.youtube.com/watch?v=lp-EO5I60KA",
+  // Music Video
+  music1: "https://www.youtube.com/watch?v=bo_efYhYU2A",
+  music2: "https://www.youtube.com/watch?v=pRpeEdMmmQ0",
+  // Wedding Video
+  wedding1: "https://www.youtube.com/watch?v=HP-MbfHFUqs",
+  wedding2: "https://www.youtube.com/watch?v=e-ORhEE9VVg",
+  // Testimonial Video
+  testimonial1: "https://www.youtube.com/watch?v=IUN664s7N-c",
+  testimonial2: "https://www.youtube.com/watch?v=Sagg08DrO5U",
 };
 
 export const portfolioItems: PortfolioWork[] = [
