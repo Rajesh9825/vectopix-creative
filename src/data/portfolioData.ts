@@ -1,8 +1,5 @@
 import brandIdentity from "@/assets/portfolio/brand-identity.jpg";
-import logoAnimation from "@/assets/portfolio/logo-animation.jpg";
-import corporateVideo from "@/assets/portfolio/corporate-video.jpg";
 import packagingDesign from "@/assets/portfolio/packaging-design.jpg";
-import explainerVideo from "@/assets/portfolio/explainer-video.jpg";
 import socialCampaign from "@/assets/portfolio/social-campaign.jpg";
 
 // Graphic Design images
