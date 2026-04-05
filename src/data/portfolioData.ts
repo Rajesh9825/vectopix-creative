@@ -74,6 +74,20 @@ export interface PortfolioWork {
   videoUrl?: string;
 }
 
+/** Auto-generate YouTube thumbnail from a YouTube URL */
+function ytThumb(url: string): string {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=)([^&\s]+)/,
+    /(?:youtu\.be\/)([^?\s]+)/,
+    /(?:youtube\.com\/embed\/)([^?\s]+)/,
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
+  }
+  return "";
+}
+
 export const categories = ["All", "Graphic Design", "Motion Graphics", "Video Editing"];
 
 export const subcategories: Subcategory[] = [
