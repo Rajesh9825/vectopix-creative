@@ -104,7 +104,7 @@ const SubcategoryPortfolio = () => {
             ))}
           </motion.div>
         ) : (
-          /* Image cards - open in lightbox */
+          /* Image cards - flip to reveal hover image */
           <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {works.map((item, i) => (
               <motion.div
@@ -113,29 +113,27 @@ const SubcategoryPortfolio = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="group cursor-pointer"
+                className="group cursor-pointer perspective-[1200px]"
                 onClick={() => handleImageClick(i)}
               >
-                <div className="rounded-2xl aspect-[4/3] relative overflow-hidden border border-border bg-card shadow-sm hover:shadow-xl transition-all duration-300">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-1">
-                      <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center">
-                        <ArrowRight className="w-5 h-5 text-white" />
-                      </div>
-                      <span className="text-xs text-white/80 font-medium">View</span>
-                    </div>
+                <div className="relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm hover:shadow-xl transition-shadow duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] transition-transform duration-700 ease-in-out">
+                  {/* Front face - main design */}
+                  <div className="absolute inset-0 [backface-visibility:hidden]">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                    <h3 className="text-base sm:text-lg font-bold mt-1 text-white leading-tight">
-                      {item.title}
-                    </h3>
+                  {/* Back face - mockup/alternate image */}
+                  <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                    <img
+                      src={item.hoverImage || item.image}
+                      alt={`${item.title} — alternate view`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </motion.div>

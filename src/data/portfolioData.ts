@@ -173,62 +173,62 @@ const SAMPLE_VIDEOS = {
 export const portfolioItems: PortfolioWork[] = [
   // ===== GRAPHIC DESIGN (type: "image") =====
   // Brochure Design
-  { id: "spa-brochure", title: "Luxury Spa Tri-fold Brochure", category: "Graphic Design", subcategory: "brochure-design", image: brochureDesign1, type: "image" },
-  { id: "ocean-brochure", title: "Ocean Resort Brochure", category: "Graphic Design", subcategory: "brochure-design", image: brochureDesign2, type: "image" },
-  { id: "realestate-brochure", title: "Real Estate Corporate Brochure", category: "Graphic Design", subcategory: "brochure-design", image: brochureDesign3, type: "image" },
+  { id: "spa-brochure", title: "Luxury Spa Tri-fold Brochure", category: "Graphic Design", subcategory: "brochure-design", image: brochureDesign1, hoverImage: brochureDesign2, type: "image" },
+  { id: "ocean-brochure", title: "Ocean Resort Brochure", category: "Graphic Design", subcategory: "brochure-design", image: brochureDesign2, hoverImage: brochureDesign3, type: "image" },
+  { id: "realestate-brochure", title: "Real Estate Corporate Brochure", category: "Graphic Design", subcategory: "brochure-design", image: brochureDesign3, hoverImage: brochureDesign1, type: "image" },
 
   // Flyer Design
-  { id: "festival-flyer", title: "Music Festival Event Flyer", category: "Graphic Design", subcategory: "flyer-design", image: flyerDesign1, type: "image" },
-  { id: "summer-party-flyer", title: "Summer Party Flyer", category: "Graphic Design", subcategory: "flyer-design", image: flyerDesign2, type: "image" },
+  { id: "festival-flyer", title: "Music Festival Event Flyer", category: "Graphic Design", subcategory: "flyer-design", image: flyerDesign1, hoverImage: flyerDesign2, type: "image" },
+  { id: "summer-party-flyer", title: "Summer Party Flyer", category: "Graphic Design", subcategory: "flyer-design", image: flyerDesign2, hoverImage: flyerDesign1, type: "image" },
 
   // Poster Design
-  { id: "art-exhibition-poster", title: "Art Exhibition Poster", category: "Graphic Design", subcategory: "poster-design", image: posterDesign1, type: "image" },
-  { id: "retro-concert-poster", title: "Retro Concert Poster", category: "Graphic Design", subcategory: "poster-design", image: posterDesign2, type: "image" },
+  { id: "art-exhibition-poster", title: "Art Exhibition Poster", category: "Graphic Design", subcategory: "poster-design", image: posterDesign1, hoverImage: posterDesign2, type: "image" },
+  { id: "retro-concert-poster", title: "Retro Concert Poster", category: "Graphic Design", subcategory: "poster-design", image: posterDesign2, hoverImage: posterDesign1, type: "image" },
 
   // Brand Identity
-  { id: "luxe-print", title: "Brand Identity — Luxe Print Co.", category: "Graphic Design", subcategory: "brand-identity", image: brandIdentity, type: "image" },
-  { id: "microsat-brand", title: "Corporate Identity — Microsat", category: "Graphic Design", subcategory: "brand-identity", image: brandIdentity2, type: "image" },
+  { id: "luxe-print", title: "Brand Identity — Luxe Print Co.", category: "Graphic Design", subcategory: "brand-identity", image: brandIdentity, hoverImage: brandIdentity2, type: "image" },
+  { id: "microsat-brand", title: "Corporate Identity — Microsat", category: "Graphic Design", subcategory: "brand-identity", image: brandIdentity2, hoverImage: brandIdentity, type: "image" },
 
   // Business Card
-  { id: "gold-foil-cards", title: "Gold Foil Premium Business Cards", category: "Graphic Design", subcategory: "business-card", image: businessCard1, type: "image" },
-  { id: "matte-black-cards", title: "Matte Black Luxury Cards", category: "Graphic Design", subcategory: "business-card", image: businessCard2, type: "image" },
+  { id: "gold-foil-cards", title: "Gold Foil Premium Business Cards", category: "Graphic Design", subcategory: "business-card", image: businessCard1, hoverImage: businessCard2, type: "image" },
+  { id: "matte-black-cards", title: "Matte Black Luxury Cards", category: "Graphic Design", subcategory: "business-card", image: businessCard2, hoverImage: businessCard1, type: "image" },
 
   // Banner Design
-  { id: "ecommerce-banner", title: "E-Commerce Promotional Banner", category: "Graphic Design", subcategory: "banner-design", image: bannerDesign1, type: "image" },
-  { id: "black-friday-banner", title: "Black Friday Sale Banner", category: "Graphic Design", subcategory: "banner-design", image: bannerDesign2, type: "image" },
+  { id: "ecommerce-banner", title: "E-Commerce Promotional Banner", category: "Graphic Design", subcategory: "banner-design", image: bannerDesign1, hoverImage: bannerDesign2, type: "image" },
+  { id: "black-friday-banner", title: "Black Friday Sale Banner", category: "Graphic Design", subcategory: "banner-design", image: bannerDesign2, hoverImage: bannerDesign1, type: "image" },
 
   // Social Media Post
-  { id: "stylehub-social", title: "Social Media Campaign — StyleHub", category: "Graphic Design", subcategory: "social-media-post", image: socialMediaPost1, type: "image" },
-  { id: "fitness-social", title: "Fitness Brand Social Post", category: "Graphic Design", subcategory: "social-media-post", image: socialMediaPost2, type: "image" },
-  { id: "stylehub-social-2", title: "Fashion Brand Social Grid", category: "Graphic Design", subcategory: "social-media-post", image: socialCampaign, type: "image" },
+  { id: "stylehub-social", title: "Social Media Campaign — StyleHub", category: "Graphic Design", subcategory: "social-media-post", image: socialMediaPost1, hoverImage: socialMediaPost2, type: "image" },
+  { id: "fitness-social", title: "Fitness Brand Social Post", category: "Graphic Design", subcategory: "social-media-post", image: socialMediaPost2, hoverImage: socialCampaign, type: "image" },
+  { id: "stylehub-social-2", title: "Fashion Brand Social Grid", category: "Graphic Design", subcategory: "social-media-post", image: socialCampaign, hoverImage: socialMediaPost1, type: "image" },
 
   // Social Media Ads
-  { id: "fitness-ads", title: "Fitness Brand Ad Creatives", category: "Graphic Design", subcategory: "social-media-ads", image: socialMediaAds1, type: "image" },
-  { id: "travel-ads", title: "Travel Agency Ad Campaign", category: "Graphic Design", subcategory: "social-media-ads", image: socialMediaAds2, type: "image" },
+  { id: "fitness-ads", title: "Fitness Brand Ad Creatives", category: "Graphic Design", subcategory: "social-media-ads", image: socialMediaAds1, hoverImage: socialMediaAds2, type: "image" },
+  { id: "travel-ads", title: "Travel Agency Ad Campaign", category: "Graphic Design", subcategory: "social-media-ads", image: socialMediaAds2, hoverImage: socialMediaAds1, type: "image" },
 
   // Packaging Design
-  { id: "freshroots-pkg", title: "Packaging Design — FreshRoots", category: "Graphic Design", subcategory: "packaging-design", image: packagingDesign, type: "image" },
-  { id: "skincare-pkg", title: "Premium Skincare Packaging", category: "Graphic Design", subcategory: "packaging-design", image: packagingDesign2, type: "image" },
+  { id: "freshroots-pkg", title: "Packaging Design — FreshRoots", category: "Graphic Design", subcategory: "packaging-design", image: packagingDesign, hoverImage: packagingDesign2, type: "image" },
+  { id: "skincare-pkg", title: "Premium Skincare Packaging", category: "Graphic Design", subcategory: "packaging-design", image: packagingDesign2, hoverImage: packagingDesign, type: "image" },
 
   // Label Design
-  { id: "coffee-label", title: "Artisan Coffee Label Design", category: "Graphic Design", subcategory: "label-design", image: labelDesign1, type: "image" },
-  { id: "wine-label", title: "Vineyard Wine Label Design", category: "Graphic Design", subcategory: "label-design", image: labelDesign2, type: "image" },
+  { id: "coffee-label", title: "Artisan Coffee Label Design", category: "Graphic Design", subcategory: "label-design", image: labelDesign1, hoverImage: labelDesign2, type: "image" },
+  { id: "wine-label", title: "Vineyard Wine Label Design", category: "Graphic Design", subcategory: "label-design", image: labelDesign2, hoverImage: labelDesign1, type: "image" },
 
   // Catalog Design
-  { id: "fashion-catalog", title: "Fashion Lookbook Catalog", category: "Graphic Design", subcategory: "catalog-design", image: catalogDesign1, type: "image" },
-  { id: "furniture-catalog", title: "Modern Furniture Catalog", category: "Graphic Design", subcategory: "catalog-design", image: catalogDesign2, type: "image" },
+  { id: "fashion-catalog", title: "Fashion Lookbook Catalog", category: "Graphic Design", subcategory: "catalog-design", image: catalogDesign1, hoverImage: catalogDesign2, type: "image" },
+  { id: "furniture-catalog", title: "Modern Furniture Catalog", category: "Graphic Design", subcategory: "catalog-design", image: catalogDesign2, hoverImage: catalogDesign1, type: "image" },
 
   // Infographic Design
-  { id: "business-infographic", title: "Business Statistics Infographic", category: "Graphic Design", subcategory: "infographic-design", image: infographicDesign1, type: "image" },
-  { id: "healthcare-infographic", title: "Healthcare Data Infographic", category: "Graphic Design", subcategory: "infographic-design", image: infographicDesign2, type: "image" },
+  { id: "business-infographic", title: "Business Statistics Infographic", category: "Graphic Design", subcategory: "infographic-design", image: infographicDesign1, hoverImage: infographicDesign2, type: "image" },
+  { id: "healthcare-infographic", title: "Healthcare Data Infographic", category: "Graphic Design", subcategory: "infographic-design", image: infographicDesign2, hoverImage: infographicDesign1, type: "image" },
 
   // Menu Design
-  { id: "fine-dining-menu", title: "Fine Dining Restaurant Menu", category: "Graphic Design", subcategory: "menu-design", image: menuDesign1, type: "image" },
-  { id: "sushi-menu", title: "Japanese Sushi Bar Menu", category: "Graphic Design", subcategory: "menu-design", image: menuDesign2, type: "image" },
+  { id: "fine-dining-menu", title: "Fine Dining Restaurant Menu", category: "Graphic Design", subcategory: "menu-design", image: menuDesign1, hoverImage: menuDesign2, type: "image" },
+  { id: "sushi-menu", title: "Japanese Sushi Bar Menu", category: "Graphic Design", subcategory: "menu-design", image: menuDesign2, hoverImage: menuDesign1, type: "image" },
 
   // Company Profile
-  { id: "corporate-profile", title: "Corporate Company Profile", category: "Graphic Design", subcategory: "company-profile", image: companyProfile1, type: "image" },
-  { id: "tech-startup-profile", title: "Tech Startup Company Profile", category: "Graphic Design", subcategory: "company-profile", image: companyProfile2, type: "image" },
+  { id: "corporate-profile", title: "Corporate Company Profile", category: "Graphic Design", subcategory: "company-profile", image: companyProfile1, hoverImage: companyProfile2, type: "image" },
+  { id: "tech-startup-profile", title: "Tech Startup Company Profile", category: "Graphic Design", subcategory: "company-profile", image: companyProfile2, hoverImage: companyProfile1, type: "image" },
 
   // ===== MOTION GRAPHICS (type: "video") =====
   // Logo Animation
