@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, ImageIcon } from "lucide-react";
+import { ArrowLeft, ImageIcon } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSubcategoryById, getWorkBySubcategory } from "@/data/portfolioData";
 import Navbar from "@/components/Navbar";
@@ -18,6 +18,7 @@ const SubcategoryPortfolio = () => {
   const works = getWorkBySubcategory(subcategoryId || "");
 
   const isVideoCategory = sub?.category === "Motion Graphics" || sub?.category === "Video Editing";
+  const imageWorks = works.filter((w) => w.type === "image");
 
   if (!sub) {
     return (
@@ -90,7 +91,6 @@ const SubcategoryPortfolio = () => {
             </button>
           </div>
         ) : isVideoCategory ? (
-          /* Video cards - play inline */
           <motion.div layout className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             {works.map((item, i) => (
               <InlineVideoCard
@@ -104,9 +104,8 @@ const SubcategoryPortfolio = () => {
             ))}
           </motion.div>
         ) : (
-          /* Image cards - flip to reveal hover image */
           <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {works.map((item, i) => (
+            {imageWorks.map((item, i) => (
               <motion.div
                 key={item.id}
                 layout
@@ -117,10 +116,8 @@ const SubcategoryPortfolio = () => {
                 style={{ perspective: "1200px" }}
                 onClick={() => handleImageClick(i)}
               >
-                <div
-                  className="flip-card-inner relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm group-hover:shadow-xl"
-                >
-                  {/* Front face - main design */}
+                <div className="flip-card-inner relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm group-hover:shadow-xl">
+                  {/* Front face */}
                   <div className="flip-card-face absolute inset-0">
                     <img
                       src={item.image}
@@ -129,11 +126,11 @@ const SubcategoryPortfolio = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {/* Back face - mockup/alternate image */}
+                  {/* Back face - mockup */}
                   <div className="flip-card-face flip-card-back absolute inset-0">
                     <img
                       src={item.hoverImage || item.image}
-                      alt={`${item.title} — alternate view`}
+                      alt={`${item.title} — mockup`}
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -145,9 +142,8 @@ const SubcategoryPortfolio = () => {
         )}
       </div>
 
-      {/* Image Lightbox */}
       <ImageLightbox
-        images={works.filter((w) => w.type === "image")}
+        works={imageWorks}
         currentIndex={lightboxIndex}
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
