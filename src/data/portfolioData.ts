@@ -50,6 +50,7 @@ export interface PortfolioWork {
   category: string;
   subcategory: string;
   image: string;
+  hoverImage?: string;
   type: WorkType;
   videoUrl?: string;
 }
