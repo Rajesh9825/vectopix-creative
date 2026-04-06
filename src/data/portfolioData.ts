@@ -348,3 +348,7 @@ export function getSubcategoryById(id: string) {
 export function getWorkBySubcategory(subcategoryId: string) {
   return portfolioItems.filter((w) => w.subcategory === subcategoryId);
 }
+
+export function getSubcategoriesByCategory(category: string) {
+  return subcategories.filter((s) => s.category === category);
+}
