@@ -113,10 +113,19 @@ const SubcategoryPortfolio = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="group cursor-pointer perspective-[1200px]"
+                className="group cursor-pointer"
+                style={{ perspective: "1200px" }}
                 onClick={() => handleImageClick(i)}
               >
-                <div className="relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm hover:shadow-xl transition-shadow duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] transition-transform duration-700 ease-in-out">
+                <div className="relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm hover:shadow-xl"
+                  style={{
+                    transformStyle: "preserve-3d",
+                    transition: "transform 0.7s ease-in-out, box-shadow 0.5s ease",
+                  }}
+                >
+                  <style>{`
+                    .group:hover .flip-inner { transform: rotateY(180deg) !important; }
+                  `}</style>
                   {/* Front face - main design */}
                   <div className="absolute inset-0 [backface-visibility:hidden]">
                     <img
