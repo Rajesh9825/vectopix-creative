@@ -117,17 +117,11 @@ const SubcategoryPortfolio = () => {
                 style={{ perspective: "1200px" }}
                 onClick={() => handleImageClick(i)}
               >
-                <div className="relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm hover:shadow-xl"
-                  style={{
-                    transformStyle: "preserve-3d",
-                    transition: "transform 0.7s ease-in-out, box-shadow 0.5s ease",
-                  }}
+                <div
+                  className="flip-card-inner relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm group-hover:shadow-xl"
                 >
-                  <style>{`
-                    .group:hover .flip-inner { transform: rotateY(180deg) !important; }
-                  `}</style>
                   {/* Front face - main design */}
-                  <div className="absolute inset-0 [backface-visibility:hidden]">
+                  <div className="flip-card-face absolute inset-0">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -136,7 +130,7 @@ const SubcategoryPortfolio = () => {
                     />
                   </div>
                   {/* Back face - mockup/alternate image */}
-                  <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <div className="flip-card-face flip-card-back absolute inset-0">
                     <img
                       src={item.hoverImage || item.image}
                       alt={`${item.title} — alternate view`}
