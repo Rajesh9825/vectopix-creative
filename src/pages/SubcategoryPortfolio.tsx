@@ -113,27 +113,23 @@ const SubcategoryPortfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="group cursor-pointer"
-                style={{ perspective: "1200px" }}
                 onClick={() => handleImageClick(i)}
               >
-                <div className="flip-card-inner relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm group-hover:shadow-xl">
-                  {/* Front face */}
-                  <div className="flip-card-face absolute inset-0">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Back face - mockup */}
-                  <div className="flip-card-face flip-card-back absolute inset-0">
-                    <img
-                      src={item.hoverImage || item.image}
-                      alt={`${item.title} — mockup`}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
+                <div className="relative w-full rounded-2xl aspect-[4/3] overflow-hidden border border-border shadow-sm transition-shadow duration-500 group-hover:shadow-xl">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50 transition-all duration-500 flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                      <div className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center">
+                        <ArrowUpRight className="w-5 h-5 text-background" />
+                      </div>
+                      <span className="text-sm font-semibold text-background tracking-wide uppercase">View More</span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
