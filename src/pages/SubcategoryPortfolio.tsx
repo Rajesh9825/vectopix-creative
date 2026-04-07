@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ImageIcon } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ImageIcon } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSubcategoryById, getWorkBySubcategory } from "@/data/portfolioData";
 import Navbar from "@/components/Navbar";
