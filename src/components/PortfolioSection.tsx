@@ -31,7 +31,7 @@ const PortfolioSection = () => {
         {/* Subcategory cards */}
         <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 max-w-6xl mx-auto">
           <AnimatePresence mode="popLayout">
-            {visibleSubs.slice(0, active === "All" ? 8 : visibleSubs.length).map((sub, i) => (
+            {subcategories.slice(0, 8).map((sub, i) => (
               <SubcategoryCard key={sub.id} item={sub} index={i} />
             ))}
           </AnimatePresence>

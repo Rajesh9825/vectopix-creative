@@ -35,22 +35,6 @@ const PortfolioPage = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 py-[clamp(2rem,6vw,3rem)]">
-        {/* Filters */}
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                active === cat
-                  ? "bg-primary text-primary-foreground shadow-card"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
 
         {/* Grouped subcategory sections */}
         {groupedCategories.map((cat) => {
