@@ -1,7 +1,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { categories, getSubcategoriesByCategory, subcategories } from "@/data/portfolioData";
+import { subcategories } from "@/data/portfolioData";
 import SubcategoryCard from "./SubcategoryCard";
 
 // Re-export for backward compat

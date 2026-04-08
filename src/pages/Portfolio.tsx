@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { categories, subcategories, getSubcategoriesByCategory } from "@/data/portfolioData";
+import { categories, getSubcategoriesByCategory } from "@/data/portfolioData";
 import SubcategoryCard from "@/components/SubcategoryCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
