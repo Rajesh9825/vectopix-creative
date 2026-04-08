@@ -1,23 +1,15 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { categories, subcategories, getSubcategoriesByCategory } from "@/data/portfolioData";
+import { categories, getSubcategoriesByCategory } from "@/data/portfolioData";
 import SubcategoryCard from "@/components/SubcategoryCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const PortfolioPage = () => {
-  const [active, setActive] = useState("All");
   const navigate = useNavigate();
 
-  const visibleSubs =
-    active === "All" ? subcategories : getSubcategoriesByCategory(active);
-
-  // Group by category when showing "All"
-  const groupedCategories = active === "All"
-    ? categories.filter((c) => c !== "All")
-    : [active];
+  const groupedCategories = categories.filter((c) => c !== "All");
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -42,22 +34,6 @@ const PortfolioPage = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 py-[clamp(2rem,6vw,3rem)]">
-        {/* Filters */}
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                active === cat
-                  ? "bg-primary text-primary-foreground shadow-card"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
 
         {/* Grouped subcategory sections */}
         {groupedCategories.map((cat) => {
