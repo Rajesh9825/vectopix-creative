@@ -8,16 +8,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const PortfolioPage = () => {
-  const [active, setActive] = useState("All");
   const navigate = useNavigate();
 
-  const visibleSubs =
-    active === "All" ? subcategories : getSubcategoriesByCategory(active);
-
-  // Group by category when showing "All"
-  const groupedCategories = active === "All"
-    ? categories.filter((c) => c !== "All")
-    : [active];
+  const groupedCategories = categories.filter((c) => c !== "All");
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
