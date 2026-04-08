@@ -1,16 +1,21 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { subcategories } from "@/data/portfolioData";
+import { categories, subcategories, getSubcategoriesByCategory } from "@/data/portfolioData";
 import SubcategoryCard from "./SubcategoryCard";
 
 // Re-export for backward compat
 export { portfolioItems, categories } from "@/data/portfolioData";
 
+const mainCategories = categories.filter((c) => c !== "All");
+
 const PortfolioSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [active, setActive] = useState(mainCategories[0]);
   const navigate = useNavigate();
+
+  const visibleSubs = getSubcategoriesByCategory(active);
 
   return (
     <section id="portfolio" className="section-padding bg-background" ref={ref}>
@@ -27,11 +32,27 @@ const PortfolioSection = () => {
           </h2>
         </motion.div>
 
+        {/* Category filters */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+          {mainCategories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                active === cat
+                  ? "bg-primary text-primary-foreground shadow-card"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
         {/* Subcategory cards */}
         <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 max-w-6xl mx-auto">
           <AnimatePresence mode="popLayout">
-            {subcategories.slice(0, 8).map((sub, i) => (
+            {visibleSubs.map((sub, i) => (
               <SubcategoryCard key={sub.id} item={sub} index={i} />
             ))}
           </AnimatePresence>
