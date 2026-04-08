@@ -10,11 +10,7 @@ export { portfolioItems, categories } from "@/data/portfolioData";
 const PortfolioSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [active, setActive] = useState("All");
   const navigate = useNavigate();
-
-  const visibleSubs =
-    active === "All" ? subcategories : getSubcategoriesByCategory(active);
 
   return (
     <section id="portfolio" className="section-padding bg-background" ref={ref}>
