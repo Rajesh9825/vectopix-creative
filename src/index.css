@@ -134,6 +134,13 @@
     font-size: clamp(2rem, 7vw, 3.5rem);
     line-height: 1.08;
   }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Flip card animation for portfolio */
